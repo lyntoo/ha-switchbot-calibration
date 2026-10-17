@@ -1,0 +1,30 @@
+name: Upstream drift
+on:
+  schedule:
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  drift:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compare with the latest Home Assistant Core release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag=$(gh api repos/home-assistant/core/releases/latest --jq .tag_name)
+          mkdir -p /tmp/core && cd /tmp/core
+          git clone --depth 1 --branch "$tag" --filter=blob:none --sparse https://github.com/home-assistant/core.git src
+          git -C src sparse-checkout set homeassistant/components/switchbot
+          cd "$GITHUB_WORKSPACE"
+          if diff -rq -x __pycache__ upstream-baseline/2026.10.1 /tmp/core/src/homeassistant/components/switchbot > /tmp/diff.txt; then
+            echo "No change in Core's switchbot integration ($tag)."
+          else
+            title="Core's switchbot integration changed ($tag)"
+            if [ -z "$(gh issue list --state open --search "\"$title\" in:title" --json number --jq '.[].number')" ]; then
+              gh issue create --title "$title" --body "Files differing from upstream-baseline/2026.10.1:\n\n$(cat /tmp/diff.txt)\n\nSee docs/UPSTREAM.md for the update procedure."
+            fi
+          fi

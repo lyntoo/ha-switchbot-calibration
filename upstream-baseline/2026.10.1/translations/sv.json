@@ -1,0 +1,501 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Enheten \u00e4r redan konfigurerad",
+            "api_error": "Fel vid kommunikation med SwitchBot API: {error_detail}",
+            "no_devices_found": "Inga SwitchBot-enheter som st\u00f6ds hittades inom r\u00e4ckh\u00e5ll; Om enheten \u00e4r inom r\u00e4ckh\u00e5ll, kontrollera att skannern har aktiv skanning aktiverad, eftersom SwitchBot-enheter inte kan uppt\u00e4ckas med passiva skanningar. Aktiv skanning kan inaktiveras n\u00e4r enheten har konfigurerats. Om du beh\u00f6ver f\u00e5 klarhet i om enheten \u00e4r inom r\u00e4ckvidd kan du ladda ner diagnostiken f\u00f6r den integration som tillhandah\u00e5ller din Bluetooth-adapter eller proxy och kontrollera om SwitchBot-enhetens MAC-adress finns med.",
+            "switchbot_unsupported_type": "SwitchBot-typ st\u00f6ds inte.",
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "error": {
+            "auth_failed": "Autentisering misslyckades: {error_detail}",
+            "encryption_key_invalid": "Nyckel-ID eller krypteringsnyckel \u00e4r ogiltig",
+            "unknown": "Ov\u00e4ntat fel"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "L\u00f6senord",
+                    "username": "Anv\u00e4ndarnamn"
+                },
+                "data_description": {
+                    "password": "L\u00f6senordet till ditt SwitchBot konto",
+                    "username": "Anv\u00e4ndarnamnet f\u00f6r ditt SwitchBot konto"
+                },
+                "description": "V\u00e4nligen ange ditt anv\u00e4ndarnamn och l\u00f6senord f\u00f6r SwitchBot appen. Denna information sparas inte och anv\u00e4nds endast f\u00f6r att h\u00e4mta information om enhetsmodell f\u00f6r att automatisera identifiering. Anv\u00e4ndarnamn och l\u00f6senord \u00e4r skiftl\u00e4gesk\u00e4nsliga."
+            },
+            "confirm": {
+                "description": "Vill du konfigurera {name}?"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "L\u00f6senord",
+                    "username": "Anv\u00e4ndarnamn"
+                },
+                "data_description": {
+                    "password": "L\u00f6senordet f\u00f6r ditt SwitchBot-konto",
+                    "username": "Anv\u00e4ndarnamnet f\u00f6r ditt SwitchBot-konto"
+                },
+                "description": "Ange ditt anv\u00e4ndarnamn och l\u00f6senord f\u00f6r SwitchBot-appen. Dessa uppgifter sparas inte och anv\u00e4nds endast f\u00f6r att h\u00e4mta din enhets krypteringsnyckel. Anv\u00e4ndarnamn och l\u00f6senord \u00e4r skiftl\u00e4gesk\u00e4nsliga."
+            },
+            "encrypted_choose_method": {
+                "description": "En krypterad SwitchBot-enhet kan konfigureras i Home Assistant p\u00e5 tv\u00e5 olika s\u00e4tt.\n\nDu kan ange nyckel-ID och krypteringsnyckel sj\u00e4lv, eller s\u00e5 kan Home Assistant importera dem fr\u00e5n ditt SwitchBot-konto.",
+                "menu_options": {
+                    "encrypted_auth": "Switchbot-konto (rekommenderas)",
+                    "encrypted_key": "Ange krypteringsnyckeln manuellt"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "Krypteringnyckel",
+                    "key_id": "Nyckel-ID"
+                },
+                "data_description": {
+                    "encryption_key": "Enhetens krypteringsnyckel",
+                    "key_id": "ID f\u00f6r krypteringsnyckeln"
+                },
+                "description": "{name}-enheten kr\u00e4ver krypteringsnyckel, information om hur du skaffar den finns i dokumentationen."
+            },
+            "password": {
+                "data": {
+                    "password": "L\u00f6senord"
+                },
+                "data_description": {
+                    "password": "Det l\u00f6senord som kr\u00e4vs f\u00f6r \u00e5tkomst till Bot-enheten"
+                },
+                "description": "{name}-enheten kr\u00e4ver ett l\u00f6senord"
+            },
+            "select_device": {
+                "data": {
+                    "address": "MAC-adress"
+                },
+                "data_description": {
+                    "address": "Bluetooth MAC-adressen f\u00f6r din SwitchBot-enhet"
+                }
+            },
+            "user": {
+                "description": "En eller flera av dina Bluetooth-adaptrar anv\u00e4nder passiv skanning, vilket kanske inte uppt\u00e4cker alla SwitchBot-enheter. Vill du logga in p\u00e5 ditt SwitchBot-konto f\u00f6r att ladda ner enhetsinformation och automatisera uppt\u00e4ckten? Om du \u00e4r os\u00e4ker rekommenderar vi att du loggar in.",
+                "menu_options": {
+                    "cloud_login": "Logga in p\u00e5 SwitchBot-konto",
+                    "select_device": "Forts\u00e4tt utan att logga in"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Kalibrering"
+            },
+            "door_auto_lock_paused": {
+                "name": "Autol\u00e5sning pausad"
+            },
+            "door_timeout": {
+                "name": "Timeout"
+            },
+            "door_unclosed_alarm": {
+                "name": "Larm f\u00f6r \u00f6ppen d\u00f6rr"
+            },
+            "door_unlocked_alarm": {
+                "name": "Larm f\u00f6r ol\u00e5st d\u00f6rr"
+            },
+            "duress_alarm": {
+                "name": "\u00d6verfallslarm"
+            },
+            "half_lock_calibration": {
+                "name": "Halvl\u00e5skalibrering"
+            },
+            "half_locked": {
+                "name": "Halvl\u00e5st"
+            },
+            "high_temperature": {
+                "name": "H\u00f6g temperatur"
+            },
+            "lockout_alarm": {
+                "name": "Lockout alarm"
+            },
+            "low_temperature": {
+                "name": "L\u00e5g temperatur"
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "Halvl\u00e5s"
+            },
+            "light_sensor": {
+                "name": "Ljussensor"
+            },
+            "next_image": {
+                "name": "N\u00e4sta bild"
+            },
+            "previous_image": {
+                "name": "F\u00f6reg\u00e5ende bild"
+            },
+            "sync_datetime": {
+                "name": "Synkronisera datum och tid"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "Manuell",
+                            "off": "Av",
+                            "schedule": "Schema"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            },
+            "roller_shade": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "performance": "Prestanda",
+                            "quiet": "Tyst"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "level_1": "Niv\u00e5 1",
+                            "level_2": "Niv\u00e5 2",
+                            "level_3": "Niv\u00e5 3",
+                            "pet": "Husdjur",
+                            "sleep": "Vilol\u00e4ge"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Bebis",
+                            "natural": "Naturlig",
+                            "normal": "Normal",
+                            "sleep": "Sovl\u00e4ge"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Bebis",
+                            "custom_natural": "Anpassad naturlig",
+                            "natural": "Naturlig",
+                            "normal": "Normal",
+                            "sleep": "Sovl\u00e4ge"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "drying_filter": "Torkfilter",
+                            "high": "H\u00f6g",
+                            "low": "L\u00e5g",
+                            "medium": "Medel",
+                            "quiet": "Tyst",
+                            "sleep": "Sova",
+                            "target_humidity": "M\u00e5lluftfuktighet"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "Lampa"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "Larm",
+                            "autumn": "H\u00f6st",
+                            "breathing": "Andning",
+                            "cherry_blossom": "K\u00f6rsb\u00e4rsblomma",
+                            "christmas": "Jul",
+                            "colorful": "F\u00e4rgstark",
+                            "cool": "Sval",
+                            "dream": "Dr\u00f6m",
+                            "dynamic": "Dynamisk",
+                            "energy": "Energi",
+                            "fade": "Tona",
+                            "fireworks": "Fyrverkeri",
+                            "flashing": "Blinkande",
+                            "flickering": "Flimrande",
+                            "flow": "Fl\u00f6de",
+                            "forest": "Skog",
+                            "game": "Spel",
+                            "halloween": "Halloween",
+                            "heartbeat": "Hj\u00e4rtslag",
+                            "lightning": "Blixt",
+                            "meditation": "Meditation",
+                            "modern": "Modern",
+                            "movie": "Film",
+                            "mystery": "Mysterium",
+                            "new_year": "Ny\u00e5r",
+                            "ocean": "Hav",
+                            "party": "Party",
+                            "rainbow": "Regnb\u00e5ge",
+                            "relax": "Koppla av",
+                            "rock": "Rock",
+                            "romance": "Romantik",
+                            "rose": "Ros",
+                            "sleep": "Sova",
+                            "smooth": "Mjukt",
+                            "starlight": "Stj\u00e4rnljus",
+                            "starlit_sky": "Stj\u00e4rnklar himmel",
+                            "strobe": "Stroboskop",
+                            "sunrise": "Soluppg\u00e5ng",
+                            "sunset": "Solnedg\u00e5ng",
+                            "valentine_day": "Alla hj\u00e4rtans dag",
+                            "vitality": "Vitalitet",
+                            "waves": "V\u00e5gor"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "display_time_offset": {
+                "name": "Visningstidsf\u00f6rskjutning"
+            },
+            "horizontal_oscillation_angle": {
+                "name": "Horisontell oscilleringsvinkel"
+            },
+            "vertical_oscillation_angle": {
+                "name": "Vertikal oscilleringsvinkel"
+            }
+        },
+        "select": {
+            "night_light": {
+                "name": "Nattlampa",
+                "state": {
+                    "bright": "Ljus",
+                    "off": "Av",
+                    "soft": "Mjuk"
+                }
+            },
+            "time_format": {
+                "name": "Tidsformat",
+                "state": {
+                    "12h": "12-timmars (AM/PM)",
+                    "24h": "24-timmars"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "Luftkvalitetsniv\u00e5",
+                "state": {
+                    "excellent": "Utm\u00e4rkt",
+                    "good": "Bra",
+                    "moderate": "M\u00e5ttlig",
+                    "unhealthy": "Oh\u00e4lsosam"
+                }
+            },
+            "battery_range": {
+                "name": "Batterir\u00e4ckvidd",
+                "state": {
+                    "critical": "Kritisk",
+                    "high": "H\u00f6g",
+                    "low": "L\u00e5g",
+                    "medium": "Medel"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Bluetooth-signal"
+            },
+            "light_level": {
+                "name": "Ljusniv\u00e5"
+            },
+            "pir_triggered_level": {
+                "name": "PIR-utl\u00f6st niv\u00e5"
+            },
+            "radar_triggered_distance": {
+                "name": "Radarutl\u00f6st avst\u00e5nd"
+            },
+            "radar_triggered_level": {
+                "name": "Radarutl\u00f6st niv\u00e5"
+            },
+            "water_level": {
+                "name": "Vattenniv\u00e5",
+                "state": {
+                    "empty": "Tom",
+                    "high": "H\u00f6g",
+                    "low": "L\u00e5g",
+                    "medium": "Medel"
+                }
+            },
+            "wifi_signal": {
+                "name": "Wi-Fi-signal"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "false": "Momentan",
+                            "true": "Dra/dra tillbaka"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "Barnl\u00e5s"
+            },
+            "horizontal_oscillation": {
+                "name": "Horisontell oscillation"
+            },
+            "vertical_oscillation": {
+                "name": "Vertikal oscillation"
+            },
+            "wireless_charging": {
+                "name": "Tr\u00e5dl\u00f6s laddning"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "advertising_state_error": {
+            "message": "{address} annonserar inte tillst\u00e5nd"
+        },
+        "device_not_found_error": {
+            "message": "Kunde inte hitta Switchbot-{sensor_type} med adressen {address}: {reason}"
+        },
+        "device_without_config_entry": {
+            "message": "Enhets-ID:t {device_id} \u00e4r inte kopplat till n\u00e5gon konfigurationspost."
+        },
+        "not_keypad_vision_device": {
+            "message": "Denna tj\u00e4nst st\u00f6ds endast f\u00f6r SwitchBot Keypad Vision-enheter."
+        },
+        "operation_error": {
+            "message": "Ett fel uppstod n\u00e4r \u00e5tg\u00e4rden utf\u00f6rdes: {error}"
+        },
+        "set_fan_state_failed": {
+            "message": "Det gick inte att skicka kommandot till fl\u00e4kten."
+        },
+        "value_error": {
+            "message": "Initieringen av Switchbot-enheten misslyckades p\u00e5 grund av felaktiga konfigurationsparametrar: {error}"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "curtain_speed": "Gardinens r\u00f6relsehastighet",
+                    "lock_force_nightlatch": "Tvinga Nightlatch-driftl\u00e4ge",
+                    "retry_count": "Antal ompr\u00f6vningar"
+                },
+                "data_description": {
+                    "curtain_speed": "Hastighet f\u00f6r \u00f6ppning och st\u00e4ngning av gardinen (1\u2013255, d\u00e4r 1 \u00e4r l\u00e5ngsammast och 255 \u00e4r snabbast)",
+                    "lock_force_nightlatch": "Forcera Nightlatch-driftl\u00e4get \u00e4ven om Nightlatch inte detekteras",
+                    "retry_count": "Hur m\u00e5nga g\u00e5nger att f\u00f6rs\u00f6ka skicka kommandon till dina SwitchBot-enheter igen"
+                }
+            }
+        }
+    },
+    "services": {
+        "add_password": {
+            "description": "L\u00e4gg till ett l\u00f6senord p\u00e5 din Keypad Vision-enhet.",
+            "fields": {
+                "device_id": {
+                    "description": "Enhets-ID f\u00f6r Keypad Vision-enheten",
+                    "name": "Enhets-ID"
+                },
+                "password": {
+                    "description": "Ett l\u00f6senord p\u00e5 6 till 12 siffror",
+                    "name": "L\u00f6senord"
+                }
+            },
+            "name": "L\u00e4gg till l\u00f6senord"
+        }
+    }
+}

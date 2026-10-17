@@ -1,0 +1,505 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "T\u00e1 an gl\u00e9as cumraithe cheana f\u00e9in",
+            "api_error": "Earr\u00e1id agus cumars\u00e1id \u00e1 d\u00e9anamh le API SwitchBot: {error_detail}",
+            "no_devices_found": "N\u00ed bhfuarthas aon fheist\u00ed SwitchBot tacaithe laistigh den raon; M\u00e1 t\u00e1 an fheiste laistigh den raon, cinntigh go bhfuil scanadh gn\u00edomhach cumasaithe ag an scan\u00f3ir, mar n\u00ed f\u00e9idir feist\u00ed SwitchBot a aimsi\u00fa le scananna \u00e9ighn\u00edomhacha. Is f\u00e9idir scananna gn\u00edomhacha a dh\u00edchumas\u00fa a luaithe a bheidh an fheiste cumraithe. M\u00e1s g\u00e1 soil\u00e9iri\u00fa a dh\u00e9anamh ort maidir le cib\u00e9 an bhfuil an fheiste laistigh den raon, \u00edosl\u00f3d\u00e1il na diagn\u00f3isic don chomhth\u00e1th\u00fa a shol\u00e1thra\u00edonn d\u2019oiri\u00fan\u00f3ir n\u00f3 do sheachfhreastala\u00ed Bluetooth agus seice\u00e1il an bhfuil seoladh MAC na feiste SwitchBot i l\u00e1thair.",
+            "switchbot_unsupported_type": "Cine\u00e1l SwitchBot nach dtaca\u00edtear leis.",
+            "unknown": "Earr\u00e1id gan choinne"
+        },
+        "error": {
+            "auth_failed": "Theip ar fh\u00edordheimhni\u00fa: {error_detail}",
+            "encryption_key_invalid": "T\u00e1 ID na heochrach n\u00f3 an eochair chriptithe neamhbhail\u00ed",
+            "unknown": "Earr\u00e1id gan choinne"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Pasfhocal",
+                    "username": "Ainm \u00fas\u00e1ideora"
+                },
+                "data_description": {
+                    "password": "Pasfhocal do chuntais SwitchBot",
+                    "username": "Ainm \u00fas\u00e1ideora do chuntais SwitchBot"
+                },
+                "description": "Cuir d\u2019ainm \u00fas\u00e1ideora agus do phasfhocal don aip SwitchBot ar f\u00e1il. N\u00ed sh\u00e1bh\u00e1lfar na sonra\u00ed seo agus n\u00ed \u00fas\u00e1idtear iad ach chun faisn\u00e9is faoi mh\u00fanla gl\u00e9is a aisghabh\u00e1il chun fionnachtain a uathoibri\u00fa. T\u00e1 ainmneacha \u00fas\u00e1ideora agus pasfhocail \u00edogair \u00f3 thaobh c\u00e1s de."
+            },
+            "confirm": {
+                "description": "Ar mhaith leat {name} a chur ar bun?"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "Pasfhocal",
+                    "username": "Ainm \u00fas\u00e1ideora"
+                },
+                "data_description": {
+                    "password": "Pasfhocal do chuntais SwitchBot",
+                    "username": "Ainm \u00fas\u00e1ideora do chuntais SwitchBot"
+                }
+            },
+            "encrypted_choose_method": {
+                "description": "Is f\u00e9idir gl\u00e9as criptithe SwitchBot a shocr\u00fa i Home Assistant ar dh\u00e1 bhealach \u00e9ags\u00fala.\n\nIs f\u00e9idir leat an ID eochrach agus an eochair chriptithe a iontr\u00e1il t\u00fa f\u00e9in, n\u00f3 is f\u00e9idir le Home Assistant iad a allmhairi\u00fa \u00f3 do chuntas SwitchBot.",
+                "menu_options": {
+                    "encrypted_auth": "Cuntas SwitchBot (molta)",
+                    "encrypted_key": "Cuir isteach eochair chriptithe de l\u00e1imh"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "Eochair chriptithe",
+                    "key_id": "Aitheantas Eochrach"
+                },
+                "data_description": {
+                    "encryption_key": "An eochair chriptithe don fheiste",
+                    "key_id": "ID na heochrach criptithe"
+                },
+                "description": "\u00c9il\u00edonn an gl\u00e9as {name} eochair chriptithe, is f\u00e9idir sonra\u00ed faoi conas \u00ed a fh\u00e1il a fh\u00e1il sa doicim\u00e9adacht."
+            },
+            "password": {
+                "data": {
+                    "password": "Pasfhocal"
+                },
+                "data_description": {
+                    "password": "An focal faire at\u00e1 ag teast\u00e1il le haghaidh rochtain ar an ngl\u00e9as Bot"
+                },
+                "description": "\u00c9il\u00edonn an gl\u00e9as {name} pasfhocal"
+            },
+            "select_device": {
+                "data": {
+                    "address": "Seoladh MAC"
+                },
+                "data_description": {
+                    "address": "Seoladh MAC Bluetooth do ghl\u00e9is SwitchBot"
+                }
+            },
+            "user": {
+                "description": "T\u00e1 ceann amh\u00e1in n\u00f3 n\u00edos m\u00f3 de do chuibheoir\u00ed Bluetooth ag baint \u00fas\u00e1ide as scanadh \u00e9ighn\u00edomhach, rud nach bhf\u00e9adfadh gach feiste SwitchBot a aimsi\u00fa. Ar mhaith leat s\u00edni\u00fa isteach i do chuntas SwitchBot chun faisn\u00e9is faoi ghl\u00e9asanna a \u00edosl\u00f3d\u00e1il agus fionnachtain a uathoibri\u00fa? Mura bhfuil t\u00fa cinnte, molaimid duit s\u00edni\u00fa isteach.",
+                "menu_options": {
+                    "cloud_login": "S\u00ednigh isteach i gcuntas SwitchBot",
+                    "select_device": "Lean ar aghaidh gan s\u00edni\u00fa isteach"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Calabr\u00fa"
+            },
+            "door_auto_lock_paused": {
+                "name": "Glas\u00e1il uathoibr\u00edoch ar sos"
+            },
+            "door_timeout": {
+                "name": "Am cr\u00edochnaithe"
+            },
+            "door_unclosed_alarm": {
+                "name": "Al\u00e1ram neamhdh\u00fanta"
+            },
+            "door_unlocked_alarm": {
+                "name": "Al\u00e1ram d\u00edghlas\u00e1ilte"
+            },
+            "duress_alarm": {
+                "name": "Al\u00e1ram \u00e9igeantais"
+            },
+            "half_lock_calibration": {
+                "name": "Calabr\u00fa leathghlas\u00e1la"
+            },
+            "half_locked": {
+                "name": "Leathghlas\u00e1ilte"
+            },
+            "high_temperature": {
+                "name": "Teocht ard"
+            },
+            "lockout_alarm": {
+                "name": "Al\u00e1ram glas\u00e1la"
+            },
+            "low_temperature": {
+                "name": "Teocht \u00edseal"
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "Leathghlas"
+            },
+            "light_sensor": {
+                "name": "Braiteoir solais"
+            },
+            "next_image": {
+                "name": "An ch\u00e9ad \u00edomh\u00e1 eile"
+            },
+            "previous_image": {
+                "name": "\u00cdomh\u00e1 roimhe seo"
+            },
+            "sync_datetime": {
+                "name": "D\u00e1ta agus am sioncr\u00f3naithe"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "L\u00e1mhleabhar",
+                            "off": "As",
+                            "schedule": "Sceideal"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Fadhb",
+                            "true": "Ceart go leor"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "normal": "Gn\u00e1th",
+                            "silent": "Ci\u00fain"
+                        }
+                    }
+                }
+            },
+            "roller_shade": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Fadhb",
+                            "true": "Ceart go leor"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "performance": "Feidhm\u00edocht",
+                            "quiet": "Ci\u00fain"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Fadhb",
+                            "true": "Ceart go leor"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Uath",
+                            "level_1": "Leibh\u00e9al 1",
+                            "level_2": "Leibh\u00e9al 2",
+                            "level_3": "Leibh\u00e9al 3",
+                            "pet": "Peata",
+                            "sleep": "Codladh"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Fadhb",
+                            "true": "Ceart go leor"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Leanbh",
+                            "natural": "N\u00e1d\u00fartha",
+                            "sleep": "Codladh"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Leanbh",
+                            "custom_natural": "N\u00e1d\u00fartha saincheaptha",
+                            "natural": "N\u00e1d\u00fartha",
+                            "normal": "Gn\u00e1th",
+                            "sleep": "Codladh"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Uath",
+                            "drying_filter": "Scagaire triom\u00fa",
+                            "high": "Ard",
+                            "low": "\u00cdseal",
+                            "medium": "Me\u00e1nach",
+                            "quiet": "Ci\u00fain",
+                            "sleep": "Codladh",
+                            "target_humidity": "Taise sprice"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Fadhb",
+                            "true": "Ceart go leor"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "Solas"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "Al\u00e1ram",
+                            "autumn": "F\u00f3mhar",
+                            "breathing": "An\u00e1l\u00fa",
+                            "cherry_blossom": "Bl\u00e1th na Sil\u00edn\u00ed",
+                            "christmas": "Nollaig",
+                            "colorful": "Ildaite",
+                            "cool": "Fionnuar",
+                            "dream": "Briongl\u00f3id",
+                            "dynamic": "Dinimici\u00fail",
+                            "energy": "Fuinneamh",
+                            "fade": "C\u00e9imni\u00fa",
+                            "fireworks": "Tinte eala\u00edne",
+                            "flashing": "Ag splancadh",
+                            "flickering": "Ag caochadh",
+                            "flow": "Sreabhadh",
+                            "forest": "Foraois",
+                            "game": "Cluiche",
+                            "halloween": "O\u00edche Shamhna",
+                            "heartbeat": "Buille cro\u00ed",
+                            "lightning": "Tintreach",
+                            "meditation": "Machnamh",
+                            "modern": "Nua-Aimseartha",
+                            "movie": "Scann\u00e1n",
+                            "mystery": "R\u00fandiamhair",
+                            "new_year": "Bliain Nua",
+                            "ocean": "Aig\u00e9an",
+                            "party": "C\u00f3isir",
+                            "rainbow": "Bogha ceatha",
+                            "relax": "Sc\u00edth a ligean",
+                            "rock": "Carraig",
+                            "romance": "R\u00f3m\u00e1nsa\u00edocht",
+                            "rose": "R\u00f3s",
+                            "sleep": "Codladh",
+                            "smooth": "R\u00e9idh",
+                            "starlight": "Solas na R\u00e9alta",
+                            "starlit_sky": "Sp\u00e9ir r\u00e9altach",
+                            "strobe": "Strob",
+                            "sunrise": "\u00c9ir\u00ed gr\u00e9ine",
+                            "sunset": "Lu\u00ed na gr\u00e9ine",
+                            "valentine_day": "L\u00e1 Fh\u00e9ile Vailint\u00edn",
+                            "vitality": "Beocht",
+                            "waves": "Tonnta"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Fadhb",
+                            "true": "Ceart go leor"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "display_time_offset": {
+                "name": "Taispe\u00e1in an t-am frith\u00e1ireamh"
+            },
+            "horizontal_oscillation_angle": {
+                "name": "Uillinn luaineachta cothrom\u00e1nach"
+            },
+            "vertical_oscillation_angle": {
+                "name": "Uillinn luaineachta ingearach"
+            }
+        },
+        "select": {
+            "night_light": {
+                "name": "Solas o\u00edche",
+                "state": {
+                    "bright": "Geal",
+                    "off": "As",
+                    "soft": "Bog"
+                }
+            },
+            "time_format": {
+                "name": "Form\u00e1id ama",
+                "state": {
+                    "12h": "12 uair an chloig (am/pm)",
+                    "24h": "24 uair an chloig"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "Leibh\u00e9al c\u00e1il\u00edochta aeir",
+                "state": {
+                    "excellent": "S\u00e1rmhaith",
+                    "good": "Go maith",
+                    "moderate": "Measartha",
+                    "unhealthy": "M\u00edshl\u00e1inti\u00fail"
+                }
+            },
+            "battery_range": {
+                "name": "Raon ceallra\u00ed",
+                "state": {
+                    "critical": "Critici\u00fail",
+                    "high": "Ard",
+                    "low": "\u00cdseal",
+                    "medium": "Me\u00e1nach"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Comhartha Bluetooth"
+            },
+            "light_level": {
+                "name": "Leibh\u00e9al solais"
+            },
+            "pir_triggered_level": {
+                "name": "Leibh\u00e9al spreagtha PIR"
+            },
+            "radar_triggered_distance": {
+                "name": "Fad spreagtha radar"
+            },
+            "radar_triggered_level": {
+                "name": "Leibh\u00e9al spreagtha radair"
+            },
+            "water_level": {
+                "name": "Leibh\u00e9al an uisce",
+                "state": {
+                    "empty": "Folamh",
+                    "high": "Ard",
+                    "low": "\u00cdseal",
+                    "medium": "Me\u00e1nach"
+                }
+            },
+            "wifi_signal": {
+                "name": "Comhartha Wi-Fi"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Fadhb",
+                            "true": "Ceart go leor"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "false": "N\u00f3im\u00e9adach",
+                            "true": "Tarraing/Tarraingt Siar"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "Glas leana\u00ed"
+            },
+            "horizontal_oscillation": {
+                "name": "Luascadh cothrom\u00e1nach"
+            },
+            "vertical_oscillation": {
+                "name": "Luascadh ingearach"
+            },
+            "wireless_charging": {
+                "name": "Muirear\u00fa gan sreang"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Fadhb",
+                            "true": "Ceart go leor"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "advertising_state_error": {
+            "message": "N\u00edl st\u00e1t f\u00f3gra\u00edochta i gceist le {address}"
+        },
+        "device_not_found_error": {
+            "message": "N\u00edorbh fh\u00e9idir Switchbot {sensor_type} a aimsi\u00fa leis an seoladh {address}: {reason}"
+        },
+        "device_without_config_entry": {
+            "message": "N\u00edl an ID gl\u00e9is {device_id} bainteach le hiontr\u00e1il chumra\u00edochta."
+        },
+        "not_keypad_vision_device": {
+            "message": "N\u00ed thaca\u00edtear leis an tseirbh\u00eds seo ach le haghaidh gl\u00e9asanna SwitchBot Keypad Vision."
+        },
+        "operation_error": {
+            "message": "Tharla earr\u00e1id agus an gn\u00edomh seo \u00e1 dh\u00e9anamh: {error}"
+        },
+        "set_fan_state_failed": {
+            "message": "Theip ar an ord\u00fa a sheoladh chuig an fean."
+        },
+        "value_error": {
+            "message": "Theip ar thos\u00fa gl\u00e9as Switchbot mar gheall ar pharaim\u00e9adair chumra\u00edochta m\u00edchearta: {error}"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "curtain_speed": "Curtain movement speed",
+                    "lock_force_nightlatch": "M\u00f3d oibri\u00fach\u00e1in F\u00f3rs\u00e1la O\u00edche",
+                    "retry_count": "L\u00edon na n-athiarrachta\u00ed"
+                },
+                "data_description": {
+                    "curtain_speed": "Luas le haghaidh oibr\u00edochta\u00ed oscailte agus d\u00fanta cuirt\u00edn\u00ed (1-255, \u00e1it a bhfuil 1 is moille agus 255 is tap\u00fala)",
+                    "lock_force_nightlatch": "F\u00f3rs\u00e1il m\u00f3d oibri\u00fach\u00e1in Nightlatch fi\u00fa mura mbraitear Nightlatch",
+                    "retry_count": "C\u00e9 mh\u00e9ad uair is ceart iarracht a dh\u00e9anamh orduithe a sheoladh chuig do ghl\u00e9asanna SwitchBot"
+                }
+            }
+        }
+    },
+    "services": {
+        "add_password": {
+            "description": "Cuir pasfhocal le do ghl\u00e9as radhairc m\u00e9archl\u00e1ir.",
+            "fields": {
+                "device_id": {
+                    "description": "ID gl\u00e9is an ghl\u00e9is radhairc eochaircheap",
+                    "name": "Aitheantas Gl\u00e9as"
+                },
+                "password": {
+                    "description": "Pasfhocal 6 go 12 dhigit",
+                    "name": "Pasfhocal"
+                }
+            },
+            "name": "Cuir pasfhocal leis"
+        }
+    }
+}

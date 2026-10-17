@@ -1,0 +1,14 @@
+{
+    "config": {
+        "abort": {
+            "no_devices_found": "Gjin apparaten f\u00fbn op it netwurk"
+        },
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Wachtwurd"
+                }
+            }
+        }
+    }
+}

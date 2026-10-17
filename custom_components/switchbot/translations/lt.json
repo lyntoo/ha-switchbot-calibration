@@ -1,0 +1,507 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Prietaisas jau sukonfig\u016bruotas",
+            "api_error": "Klaida bendraujant su SwitchBot API: {error_detail}",
+            "no_devices_found": "Diapazone nerasta palaikom\u0173 \u201eSwitchBot\u201c prietais\u0173; Jei prietaisas yra diapazone, \u012fsitikinkite, kad skaitytuve \u012fjungtas aktyvus nuskaitymas, nes naudojant pasyvius nuskaitymus SwitchBot prietais\u0173 nepavyks aptikti. Aktyv\u0173 nuskaitym\u0105 galima i\u0161jungti, kai prietaisas sukonfig\u016bruotas. Jei reikia paai\u0161kinimo, ar prietaisas yra diapazone, atsisi\u0173skite integracijos, kuri suteikia j\u016bs\u0173 Bluetooth adapter\u012f arba tarpin\u012f server\u012f, diagnostik\u0105 ir patikrinkite, ar yra SwitchBot prietaiso MAC adresas.",
+            "switchbot_unsupported_type": "Nepalaikomas SwitchBot tipas.",
+            "unknown": "Netik\u0117ta klaida"
+        },
+        "error": {
+            "auth_failed": "Autentifikavimas nepavyko: {error_detail}",
+            "encryption_key_invalid": "Rakto ID arba \u0161ifravimo raktas neteisingas",
+            "unknown": "Netik\u0117ta klaida"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Naudotojo vardas"
+                },
+                "data_description": {
+                    "password": "SwitchBot paskyros slapta\u017eodis",
+                    "username": "SwitchBot paskyros naudotojo vardas"
+                },
+                "description": "Pateikite savo SwitchBot program\u0117l\u0117s vartotojo vard\u0105 ir slapta\u017eod\u012f. \u0160ie duomenys nebus i\u0161saugoti ir bus naudojami tik \u012frenginio modelio informacijai gauti, siekiant automatizuoti aptikim\u0105. Vartotojo varduose ir slapta\u017eod\u017eiuose skiriamos did\u017eiosios ir ma\u017eosios raid\u0117s."
+            },
+            "confirm": {
+                "description": "Ar norite nustatyti {name} ?"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "Slapta\u017eodis",
+                    "username": "Naudotojo vardas"
+                },
+                "data_description": {
+                    "password": "SwitchBot paskyros slapta\u017eodis",
+                    "username": "SwitchBot paskyros naudotojo vardas"
+                },
+                "description": "Pateikite savo SwitchBot program\u0117l\u0117s vartotojo vard\u0105 ir slapta\u017eod\u012f. \u0160ie duomenys nebus i\u0161saugoti ir bus naudojami tik j\u016bs\u0173 \u012frenginio \u0161ifravimo raktui gauti. Vartotojo varduose ir slapta\u017eod\u017eiuose skiriamos did\u017eiosios ir ma\u017eosios raid\u0117s."
+            },
+            "encrypted_choose_method": {
+                "description": "\u0160ifruot\u0105 SwitchBot \u012frengin\u012f Home Assistant galima nustatyti dviem skirtingais b\u016bdais. \n \n Galite patys \u012fvesti rakto ID ir \u0161ifravimo rakt\u0105 arba Home Assistant gali importuoti juos i\u0161 j\u016bs\u0173 SwitchBot paskyros.",
+                "menu_options": {
+                    "encrypted_auth": "\u201eSwitchBot\u201c paskyra (rekomenduojama)",
+                    "encrypted_key": "\u012eveskite \u0161ifravimo rakt\u0105 rankiniu b\u016bdu"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "\u0160ifravimo raktas",
+                    "key_id": "Rakto ID"
+                },
+                "data_description": {
+                    "encryption_key": "\u012erenginio \u0161ifravimo raktas",
+                    "key_id": "\u0160ifravimo rakto ID"
+                },
+                "description": "\u012erenginyje {name} reikalingas \u0161ifravimo raktas. I\u0161sami\u0105 informacij\u0105, kaip j\u012f gauti, rasite dokumentacijoje."
+            },
+            "password": {
+                "data": {
+                    "password": "Slapta\u017eodis"
+                },
+                "data_description": {
+                    "password": "Slapta\u017eodis, reikalingas prieigai prie Bot \u012frenginio"
+                },
+                "description": "Prietaise {name} reikalingas slapta\u017eodis"
+            },
+            "select_device": {
+                "data": {
+                    "address": "MAC adresas"
+                },
+                "data_description": {
+                    "address": "J\u016bs\u0173 SwitchBot \u012frenginio Bluetooth MAC adresas"
+                }
+            },
+            "user": {
+                "description": "Vienas ar keli j\u016bs\u0173 Bluetooth adapteriai naudoja pasyv\u0173 nuskaitym\u0105, kuris gali aptikti ne visus SwitchBot \u012frenginius. Ar nor\u0117tum\u0117te prisijungti prie SwitchBot paskyros, kad atsisi\u0173stum\u0117te \u012frenginio informacij\u0105 ir automatizuotum\u0117te aptikim\u0105? Jei nesate tikri, rekomenduojame prisijungti.",
+                "menu_options": {
+                    "cloud_login": "Prisijunkite prie SwitchBot paskyros",
+                    "select_device": "T\u0119sti neprisijungus"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Kalibravimas"
+            },
+            "door_auto_lock_paused": {
+                "name": "Automatinis u\u017eraktas pristabdytas"
+            },
+            "door_timeout": {
+                "name": "Laikas baig\u0117si"
+            },
+            "door_unclosed_alarm": {
+                "name": "Neu\u017edaryta signalizacija"
+            },
+            "door_unlocked_alarm": {
+                "name": "Atrakintas signalas"
+            },
+            "duress_alarm": {
+                "name": "Pavojaus signalas"
+            },
+            "half_lock_calibration": {
+                "name": "Pusiau u\u017erakintas kalibravimas"
+            },
+            "half_locked": {
+                "name": "Pusiau u\u017erakinta"
+            },
+            "high_temperature": {
+                "name": "Auk\u0161ta temperat\u016bra"
+            },
+            "lockout_alarm": {
+                "name": "Blokavimo signalizacija"
+            },
+            "low_temperature": {
+                "name": "\u017dema temperat\u016bra"
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "Pus\u0117 u\u017erakto"
+            },
+            "light_sensor": {
+                "name": "\u0160viesos jutiklis"
+            },
+            "next_image": {
+                "name": "Kitas vaizdas"
+            },
+            "previous_image": {
+                "name": "Ankstesnis vaizdas"
+            },
+            "sync_datetime": {
+                "name": "Sinchronizuoti dat\u0105 ir laik\u0105"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "Rankinis",
+                            "off": "I\u0161jungta",
+                            "schedule": "Tvarkara\u0161tis"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "GERAI"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "normal": "Normalus",
+                            "silent": "Tylus"
+                        }
+                    }
+                }
+            },
+            "roller_shade": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "GERAI"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "performance": "Na\u0161umas",
+                            "quiet": "Tyla"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "GERAI"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automatinis",
+                            "level_1": "1 lygis",
+                            "level_2": "2 lygis",
+                            "level_3": "3 lygis",
+                            "pet": "Augintinis",
+                            "sleep": "Miegas"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "GERAI"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "K\u016bdikis",
+                            "natural": "Nat\u016bralus",
+                            "normal": "Normalus",
+                            "sleep": "Miegas"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "K\u016bdikis",
+                            "custom_natural": "Nat\u016bralus pagal u\u017esakym\u0105",
+                            "natural": "Nat\u016bralus",
+                            "normal": "Normalus",
+                            "sleep": "Miegas"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Automatinis",
+                            "drying_filter": "D\u017eiovinimo filtras",
+                            "high": "Auk\u0161tas",
+                            "low": "\u017demas",
+                            "medium": "Vidutinis",
+                            "quiet": "Tyliai",
+                            "sleep": "Miegas",
+                            "target_humidity": "Tikslin\u0117 dr\u0117gm\u0117"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "GERAI"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "Lempa"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "Signalizacija",
+                            "autumn": "Ruduo",
+                            "breathing": "Kv\u0117pavimas",
+                            "cherry_blossom": "Vy\u0161ni\u0173 \u017eiedas",
+                            "christmas": "Kal\u0117dos",
+                            "colorful": "Spalvingas",
+                            "cool": "\u0160aunu",
+                            "dream": "Svajon\u0117",
+                            "dynamic": "Dinaminis",
+                            "energy": "Energija",
+                            "fade": "I\u0161blukimas",
+                            "fireworks": "Fejerverkai",
+                            "flashing": "Mirksintis",
+                            "flickering": "Mirg\u0117jimas",
+                            "flow": "Srautas",
+                            "forest": "Mi\u0161kas",
+                            "game": "\u017daidimas",
+                            "halloween": "Helovinas",
+                            "heartbeat": "\u0160irdies plakimas",
+                            "lightning": "\u017daibas",
+                            "meditation": "Meditacija",
+                            "modern": "\u0160iuolaikinis",
+                            "movie": "Filmas",
+                            "mystery": "Paslaptis",
+                            "new_year": "Naujieji metai",
+                            "ocean": "Vandenynas",
+                            "party": "Vakar\u0117lis",
+                            "rainbow": "Vaivoryk\u0161t\u0117",
+                            "relax": "Atsipalaiduokite",
+                            "rock": "Rokas",
+                            "romance": "Romantika",
+                            "rose": "Ro\u017e\u0117",
+                            "sleep": "Miegas",
+                            "smooth": "Sklandus",
+                            "starlight": "\u017dvaig\u017ed\u017ei\u0173 \u0161viesa",
+                            "starlit_sky": "\u017dvaig\u017ed\u0117tas dangus",
+                            "strobe": "Stroboskopas",
+                            "sunrise": "Saul\u0117tekis",
+                            "sunset": "Saul\u0117lydis",
+                            "valentine_day": "Valentino diena",
+                            "vitality": "Gyvybingumas",
+                            "waves": "Bangos"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "GERAI"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "display_time_offset": {
+                "name": "Laiko poslinkis ekrane"
+            },
+            "horizontal_oscillation_angle": {
+                "name": "Horizontalus svyravimo kampas"
+            },
+            "vertical_oscillation_angle": {
+                "name": "Vertikalus svyravimo kampas"
+            }
+        },
+        "select": {
+            "night_light": {
+                "name": "Naktin\u0117 lemput\u0117",
+                "state": {
+                    "bright": "Ry\u0161kus",
+                    "off": "I\u0161jungta",
+                    "soft": "Mink\u0161tas"
+                }
+            },
+            "time_format": {
+                "name": "Laiko formatas",
+                "state": {
+                    "12h": "12 valand\u0173 (prie\u0161piet/popiet)",
+                    "24h": "24 valand\u0173"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "Oro kokyb\u0117s lygis",
+                "state": {
+                    "excellent": "Puikus",
+                    "good": "Geras",
+                    "moderate": "Vidutinio sunkumo",
+                    "unhealthy": "Nesveika"
+                }
+            },
+            "battery_range": {
+                "name": "Baterij\u0173 diapazonas",
+                "state": {
+                    "critical": "Kritinis",
+                    "high": "Auk\u0161tas",
+                    "low": "\u017demas",
+                    "medium": "Vidutinis"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Bluetooth signalas"
+            },
+            "light_level": {
+                "name": "\u0160viesos lygis"
+            },
+            "pir_triggered_level": {
+                "name": "PIR su\u017eadinimo lygis"
+            },
+            "radar_triggered_distance": {
+                "name": "Radaro su\u017eadintas atstumas"
+            },
+            "radar_triggered_level": {
+                "name": "Radaru suaktyvintas lygis"
+            },
+            "water_level": {
+                "name": "Vandens lygis",
+                "state": {
+                    "empty": "Tu\u0161\u010dias",
+                    "high": "Auk\u0161tas",
+                    "low": "\u017demas",
+                    "medium": "Vidutinis"
+                }
+            },
+            "wifi_signal": {
+                "name": "Wi-Fi signalas"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "GERAI"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "false": "Momentinis",
+                            "true": "I\u0161traukti / i\u0161traukti"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "Vaik\u0173 u\u017eraktas"
+            },
+            "horizontal_oscillation": {
+                "name": "Horizontalus svyravimas"
+            },
+            "vertical_oscillation": {
+                "name": "Vertikalus svyravimas"
+            },
+            "wireless_charging": {
+                "name": "Belaidis \u012fkrovimas"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "GERAI"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "advertising_state_error": {
+            "message": "{address} n\u0117ra reklamos b\u016bsena"
+        },
+        "device_not_found_error": {
+            "message": "Nepavyko rasti Switchbot {sensor_type} su adresu {address}: {reason}"
+        },
+        "device_without_config_entry": {
+            "message": "\u012erenginio ID {device_id} n\u0117ra susietas su konfig\u016bracijos \u012fra\u0161u."
+        },
+        "not_keypad_vision_device": {
+            "message": "\u0160i paslauga palaikoma tik SwitchBot Keypad Vision \u012frenginiuose."
+        },
+        "operation_error": {
+            "message": "Atliekant veiksm\u0105 \u012fvyko klaida: {error}"
+        },
+        "set_fan_state_failed": {
+            "message": "Nepavyko i\u0161si\u0173sti komandos ventiliatoriui."
+        },
+        "value_error": {
+            "message": "Switchbot \u012frenginio inicijavimas nepavyko d\u0117l neteising\u0173 konfig\u016bracijos parametr\u0173: {error}"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "curtain_speed": "U\u017euolaid\u0173 jud\u0117jimo greitis",
+                    "lock_force_nightlatch": "Priverstinis Nightlatch veikimo re\u017eimas",
+                    "retry_count": "Bandykite skai\u010diuoti dar kart\u0105"
+                },
+                "data_description": {
+                    "curtain_speed": "U\u017euolaid\u0173 atidarymo ir u\u017edarymo greitis (1\u2013255, kur 1 yra l\u0117\u010diausias, o 255 \u2013 grei\u010diausias)",
+                    "lock_force_nightlatch": "Priverstinis Nightlatch veikimo re\u017eimas, net jei Nightlatch neaptinkamas",
+                    "retry_count": "Kiek kart\u0173 pakartotinai bandyti si\u0173sti komandas \u012f SwitchBot \u012frenginius"
+                }
+            }
+        }
+    },
+    "services": {
+        "add_password": {
+            "description": "Prid\u0117kite slapta\u017eod\u012f prie savo klaviat\u016bros matymo \u012frenginio.",
+            "fields": {
+                "device_id": {
+                    "description": "Klaviat\u016bros matymo \u012frenginio ID",
+                    "name": "\u012erenginio ID"
+                },
+                "password": {
+                    "description": "6\u201312 skaitmen\u0173 slapta\u017eodis",
+                    "name": "Slapta\u017eodis"
+                }
+            },
+            "name": "Prid\u0117ti slapta\u017eod\u012f"
+        }
+    }
+}

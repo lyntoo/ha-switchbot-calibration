@@ -1,0 +1,499 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "\u30c7\u30d0\u30a4\u30b9\u306f\u3059\u3067\u306b\u8a2d\u5b9a\u3055\u308c\u3066\u3044\u307e\u3059",
+            "api_error": "SwitchBot API \u3068\u306e\u901a\u4fe1\u4e2d\u306b\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f: {error_detail}",
+            "no_devices_found": "\u30b5\u30dd\u30fc\u30c8\u3055\u308c\u3066\u3044\u308b SwitchBot \u30c7\u30d0\u30a4\u30b9\u304c\u7bc4\u56f2\u5185\u306b\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3002\u30c7\u30d0\u30a4\u30b9\u304c\u7bc4\u56f2\u5185\u306b\u3042\u308b\u5834\u5408\u306f\u3001SwitchBot \u30c7\u30d0\u30a4\u30b9\u306f\u30d1\u30c3\u30b7\u30d6 \u30b9\u30ad\u30e3\u30f3\u3067\u306f\u691c\u51fa\u3067\u304d\u306a\u3044\u305f\u3081\u3001\u30b9\u30ad\u30e3\u30ca\u30fc\u3067\u30a2\u30af\u30c6\u30a3\u30d6 \u30b9\u30ad\u30e3\u30f3\u304c\u6709\u52b9\u306b\u306a\u3063\u3066\u3044\u308b\u3053\u3068\u3092\u78ba\u8a8d\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u30c7\u30d0\u30a4\u30b9\u304c\u69cb\u6210\u3055\u308c\u305f\u3089\u3001\u30a2\u30af\u30c6\u30a3\u30d6 \u30b9\u30ad\u30e3\u30f3\u3092\u7121\u52b9\u306b\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u30c7\u30d0\u30a4\u30b9\u304c\u7bc4\u56f2\u5185\u306b\u3042\u308b\u304b\u3069\u3046\u304b\u3092\u660e\u78ba\u306b\u3059\u308b\u5fc5\u8981\u304c\u3042\u308b\u5834\u5408\u306f\u3001Bluetooth \u30a2\u30c0\u30d7\u30bf\u30fc\u307e\u305f\u306f\u30d7\u30ed\u30ad\u30b7\u3092\u63d0\u4f9b\u3059\u308b\u7d71\u5408\u306e\u8a3a\u65ad\u3092\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u3057\u3001SwitchBot \u30c7\u30d0\u30a4\u30b9\u306e MAC \u30a2\u30c9\u30ec\u30b9\u304c\u5b58\u5728\u3059\u308b\u304b\u3069\u3046\u304b\u3092\u78ba\u8a8d\u3057\u307e\u3059\u3002",
+            "switchbot_unsupported_type": "\u30b5\u30dd\u30fc\u30c8\u3055\u308c\u3066\u3044\u306a\u3044 SwitchBot \u30bf\u30a4\u30d7\u3067\u3059\u3002",
+            "unknown": "\u4e88\u671f\u3057\u306a\u3044\u30a8\u30e9\u30fc"
+        },
+        "error": {
+            "auth_failed": "\u8a8d\u8a3c\u306b\u5931\u6557\u3057\u307e\u3057\u305f: {error_detail}",
+            "encryption_key_invalid": "\u30ad\u30fcID\u307e\u305f\u306f\u6697\u53f7\u5316\u30ad\u30fc\u304c\u7121\u52b9\u3067\u3059",
+            "unknown": "\u4e88\u671f\u3057\u306a\u3044\u30a8\u30e9\u30fc"
+        },
+        "flow_title": "{name} ( {address} )",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "\u30d1\u30b9\u30ef\u30fc\u30c9",
+                    "username": "\u30e6\u30fc\u30b6\u30fc\u540d"
+                },
+                "data_description": {
+                    "password": "SwitchBot\u30a2\u30ab\u30a6\u30f3\u30c8\u306e\u30d1\u30b9\u30ef\u30fc\u30c9",
+                    "username": "SwitchBot\u30a2\u30ab\u30a6\u30f3\u30c8\u306e\u30e6\u30fc\u30b6\u30fc\u540d"
+                },
+                "description": "SwitchBot\u30a2\u30d7\u30ea\u306e\u30e6\u30fc\u30b6\u30fc\u540d\u3068\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u3053\u306e\u30c7\u30fc\u30bf\u306f\u4fdd\u5b58\u3055\u308c\u305a\u3001\u30c7\u30d0\u30a4\u30b9\u30e2\u30c7\u30eb\u60c5\u5831\u3092\u53d6\u5f97\u3057\u3066\u81ea\u52d5\u691c\u51fa\u3092\u884c\u3046\u305f\u3081\u306b\u306e\u307f\u4f7f\u7528\u3055\u308c\u307e\u3059\u3002\u30e6\u30fc\u30b6\u30fc\u540d\u3068\u30d1\u30b9\u30ef\u30fc\u30c9\u306f\u5927\u6587\u5b57\u3068\u5c0f\u6587\u5b57\u304c\u533a\u5225\u3055\u308c\u307e\u3059\u3002"
+            },
+            "confirm": {
+                "description": "{name} \u3092\u30bb\u30c3\u30c8\u30a2\u30c3\u30d7\u3057\u307e\u3059\u304b\uff1f"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "\u30d1\u30b9\u30ef\u30fc\u30c9",
+                    "username": "\u30e6\u30fc\u30b6\u30fc\u540d"
+                },
+                "data_description": {
+                    "password": "SwitchBot\u30a2\u30ab\u30a6\u30f3\u30c8\u306e\u30d1\u30b9\u30ef\u30fc\u30c9",
+                    "username": "SwitchBot\u30a2\u30ab\u30a6\u30f3\u30c8\u306e\u30e6\u30fc\u30b6\u30fc\u540d"
+                },
+                "description": "SwitchBot \u30a2\u30d7\u30ea\u306e\u30e6\u30fc\u30b6\u30fc\u540d\u3068\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u3053\u306e\u30c7\u30fc\u30bf\u306f\u4fdd\u5b58\u3055\u308c\u305a\u3001\u30c7\u30d0\u30a4\u30b9\u306e\u6697\u53f7\u5316\u30ad\u30fc\u3092\u53d6\u5f97\u3059\u308b\u305f\u3081\u306b\u306e\u307f\u4f7f\u7528\u3055\u308c\u307e\u3059\u3002\u30e6\u30fc\u30b6\u30fc\u540d\u3068\u30d1\u30b9\u30ef\u30fc\u30c9\u306f\u5927\u6587\u5b57\u3068\u5c0f\u6587\u5b57\u304c\u533a\u5225\u3055\u308c\u307e\u3059\u3002"
+            },
+            "encrypted_choose_method": {
+                "description": "\u6697\u53f7\u5316\u3055\u308c\u305fSwitchBot\u30c7\u30d0\u30a4\u30b9\u306f\u3001Home Assistant\u30672\u3064\u306e\u7570\u306a\u308b\u65b9\u6cd5\u3067\u8a2d\u5b9a\u3067\u304d\u307e\u3059\u3002\n\n\u30ad\u30fcID\u3068\u6697\u53f7\u5316\u30ad\u30fc\u3092\u81ea\u5206\u3067\u5165\u529b\u3059\u308b\u65b9\u6cd5\u3068\u3001Home Assistant\u304cSwitchBot\u30a2\u30ab\u30a6\u30f3\u30c8\u304b\u3089\u30a4\u30f3\u30dd\u30fc\u30c8\u3059\u308b\u65b9\u6cd5\u3067\u3059\u3002",
+                "menu_options": {
+                    "encrypted_auth": "SwitchBot \u30a2\u30ab\u30a6\u30f3\u30c8 (\u63a8\u5968)",
+                    "encrypted_key": "\u6697\u53f7\u5316\u30ad\u30fc\u3092\u624b\u52d5\u3067\u5165\u529b\u3059\u308b"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "\u6697\u53f7\u5316\u30ad\u30fc",
+                    "key_id": "\u30ad\u30fcID"
+                },
+                "data_description": {
+                    "encryption_key": "\u30c7\u30d0\u30a4\u30b9\u306e\u6697\u53f7\u5316\u30ad\u30fc",
+                    "key_id": "\u6697\u53f7\u5316\u30ad\u30fc\u306eID"
+                },
+                "description": "{name}\u30c7\u30d0\u30a4\u30b9\u306b\u306f\u6697\u53f7\u5316\u30ad\u30fc\u304c\u5fc5\u8981\u3067\u3059\u3002\u305d\u306e\u53d6\u5f97\u65b9\u6cd5\u306e\u8a73\u7d30\u306b\u3064\u3044\u3066\u306f\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u3092\u53c2\u7167\u3057\u3066\u304f\u3060\u3055\u3044\u3002"
+            },
+            "password": {
+                "data": {
+                    "password": "\u30d1\u30b9\u30ef\u30fc\u30c9"
+                },
+                "data_description": {
+                    "password": "Bot\u30c7\u30d0\u30a4\u30b9\u306e\u30a2\u30af\u30bb\u30b9\u306b\u5fc5\u8981\u306a\u30d1\u30b9\u30ef\u30fc\u30c9"
+                },
+                "description": "{name} \u30c7\u30d0\u30a4\u30b9\u306b\u306f\u30d1\u30b9\u30ef\u30fc\u30c9\u304c\u5fc5\u8981\u3067\u3059"
+            },
+            "select_device": {
+                "data": {
+                    "address": "Mac\u30a2\u30c9\u30ec\u30b9"
+                },
+                "data_description": {
+                    "address": "SwitchBot\u30c7\u30d0\u30a4\u30b9\u306eBluetooth MAC\u30a2\u30c9\u30ec\u30b9"
+                }
+            },
+            "user": {
+                "description": "\u304a\u4f7f\u3044\u306eBluetooth\u30a2\u30c0\u30d7\u30bf\u30fc\u306e\u3046\u30611\u3064\u4ee5\u4e0a\u304c\u30d1\u30c3\u30b7\u30d6\u30b9\u30ad\u30e3\u30f3\u3092\u4f7f\u7528\u3057\u3066\u3044\u308b\u305f\u3081\u3001\u3059\u3079\u3066\u306eSwitchBot\u30c7\u30d0\u30a4\u30b9\u3092\u691c\u51fa\u3067\u304d\u306a\u3044\u53ef\u80fd\u6027\u304c\u3042\u308a\u307e\u3059\u3002\u30c7\u30d0\u30a4\u30b9\u60c5\u5831\u3092\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u3057\u3066\u691c\u51fa\u3092\u81ea\u52d5\u5316\u3059\u308b\u305f\u3081\u306b\u3001SwitchBot\u30a2\u30ab\u30a6\u30f3\u30c8\u306b\u30b5\u30a4\u30f3\u30a4\u30f3\u3057\u307e\u3059\u304b\uff1f\u3054\u4e0d\u660e\u306a\u5834\u5408\u306f\u3001\u30b5\u30a4\u30f3\u30a4\u30f3\u3059\u308b\u3053\u3068\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002",
+                "menu_options": {
+                    "cloud_login": "SwitchBot\u30a2\u30ab\u30a6\u30f3\u30c8\u306b\u30ed\u30b0\u30a4\u30f3",
+                    "select_device": "\u30ed\u30b0\u30a4\u30f3\u305b\u305a\u306b\u7d9a\u884c"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "\u30ad\u30e3\u30ea\u30d6\u30ec\u30fc\u30b7\u30e7\u30f3"
+            },
+            "door_auto_lock_paused": {
+                "name": "\u30aa\u30fc\u30c8\u30ed\u30c3\u30af\u4e00\u6642\u505c\u6b62\u4e2d"
+            },
+            "door_timeout": {
+                "name": "\u30bf\u30a4\u30e0\u30a2\u30a6\u30c8"
+            },
+            "door_unclosed_alarm": {
+                "name": "\u534a\u30c9\u30a2\u30a2\u30e9\u30fc\u30e0"
+            },
+            "door_unlocked_alarm": {
+                "name": "\u672a\u65bd\u9320\u30a2\u30e9\u30fc\u30e0"
+            },
+            "duress_alarm": {
+                "name": "\u8105\u8feb\u8b66\u5831"
+            },
+            "half_lock_calibration": {
+                "name": "\u30cf\u30fc\u30d5\u30ed\u30c3\u30af\u6821\u6b63"
+            },
+            "half_locked": {
+                "name": "\u30cf\u30fc\u30d5\u30ed\u30c3\u30af\u3055\u308c\u307e\u3057\u305f"
+            },
+            "high_temperature": {
+                "name": "\u9ad8\u6e29"
+            },
+            "lockout_alarm": {
+                "name": "\u30ed\u30c3\u30af\u30a2\u30a6\u30c8\u30a2\u30e9\u30fc\u30e0"
+            },
+            "low_temperature": {
+                "name": "\u4f4e\u6e29"
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "\u30cf\u30fc\u30d5\u30ed\u30c3\u30af"
+            },
+            "light_sensor": {
+                "name": "\u5149\u30bb\u30f3\u30b5\u30fc"
+            },
+            "next_image": {
+                "name": "\u6b21\u306e\u753b\u50cf"
+            },
+            "previous_image": {
+                "name": "\u524d\u306e\u753b\u50cf"
+            },
+            "sync_datetime": {
+                "name": "\u65e5\u4ed8\u3068\u6642\u523b\u306e\u540c\u671f"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "\u624b\u52d5",
+                            "off": "\u30aa\u30d5",
+                            "schedule": "\u30b9\u30b1\u30b8\u30e5\u30fc\u30eb"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u554f\u984c\u70b9",
+                            "true": "OK"
+                        }
+                    }
+                }
+            },
+            "roller_shade": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u554f\u984c\u70b9",
+                            "true": "OK"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "performance": "\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9",
+                            "quiet": "\u9759\u304b"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u554f\u984c\u70b9",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "\u81ea\u52d5",
+                            "level_1": "\u30ec\u30d9\u30eb 1",
+                            "level_2": "\u30ec\u30d9\u30eb 2",
+                            "level_3": "\u30ec\u30d9\u30eb 3",
+                            "pet": "\u30da\u30c3\u30c8",
+                            "sleep": "\u30b9\u30ea\u30fc\u30d7"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u554f\u984c\u70b9",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "\u8d64\u3061\u3083\u3093",
+                            "natural": "\u30ca\u30c1\u30e5\u30e9\u30eb",
+                            "normal": "\u30ce\u30fc\u30de\u30eb",
+                            "sleep": "\u30b9\u30ea\u30fc\u30d7"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "\u8d64\u3061\u3083\u3093",
+                            "custom_natural": "\u30ab\u30b9\u30bf\u30e0\u30ca\u30c1\u30e5\u30e9\u30eb",
+                            "natural": "\u30ca\u30c1\u30e5\u30e9\u30eb",
+                            "normal": "\u30ce\u30fc\u30de\u30eb",
+                            "sleep": "\u30b9\u30ea\u30fc\u30d7"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "\u81ea\u52d5",
+                            "drying_filter": "\u4e7e\u71e5\u30d5\u30a3\u30eb\u30bf\u30fc",
+                            "high": "\u9ad8",
+                            "low": "\u4f4e",
+                            "medium": "\u4e2d",
+                            "quiet": "\u9759\u304b",
+                            "sleep": "\u30b9\u30ea\u30fc\u30d7",
+                            "target_humidity": "\u8a2d\u5b9a\u6e7f\u5ea6"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u554f\u984c\u70b9",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "\u7167\u660e"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "\u30a2\u30e9\u30fc\u30e0",
+                            "autumn": "\u79cb",
+                            "breathing": "\u547c\u5438",
+                            "cherry_blossom": "\u685c",
+                            "christmas": "\u30af\u30ea\u30b9\u30de\u30b9",
+                            "colorful": "\u30ab\u30e9\u30d5\u30eb",
+                            "cool": "\u30af\u30fc\u30eb",
+                            "dream": "\u5922",
+                            "dynamic": "\u30c0\u30a4\u30ca\u30df\u30c3\u30af",
+                            "energy": "\u30a8\u30cd\u30eb\u30ae\u30fc",
+                            "fade": "\u30d5\u30a7\u30fc\u30c9",
+                            "fireworks": "\u82b1\u706b",
+                            "flashing": "\u70b9\u6ec5",
+                            "flickering": "\u660e\u6ec5",
+                            "flow": "\u30d5\u30ed\u30fc",
+                            "forest": "\u68ee",
+                            "game": "\u30b2\u30fc\u30e0",
+                            "halloween": "\u30cf\u30ed\u30a6\u30a3\u30f3",
+                            "heartbeat": "\u30cf\u30fc\u30c8\u30d3\u30fc\u30c8",
+                            "lightning": "\u96f7",
+                            "meditation": "\u7791\u60f3",
+                            "modern": "\u30e2\u30c0\u30f3",
+                            "movie": "\u6620\u753b",
+                            "mystery": "\u30df\u30b9\u30c6\u30ea\u30fc",
+                            "new_year": "\u65b0\u5e74",
+                            "ocean": "\u30aa\u30fc\u30b7\u30e3\u30f3",
+                            "party": "\u30d1\u30fc\u30c6\u30a3\u30fc",
+                            "rainbow": "\u30ec\u30a4\u30f3\u30dc\u30fc",
+                            "relax": "\u30ea\u30e9\u30c3\u30af\u30b9",
+                            "rock": "\u30ed\u30c3\u30af",
+                            "romance": "\u30ed\u30de\u30f3\u30b9",
+                            "rose": "\u30ed\u30fc\u30ba",
+                            "sleep": "\u7761\u7720",
+                            "smooth": "\u30b9\u30e0\u30fc\u30ba",
+                            "starlight": "\u30b9\u30bf\u30fc\u30e9\u30a4\u30c8",
+                            "starlit_sky": "\u661f\u7a7a",
+                            "strobe": "\u30b9\u30c8\u30ed\u30dc",
+                            "sunrise": "\u65e5\u306e\u51fa",
+                            "sunset": "\u65e5\u6ca1",
+                            "valentine_day": "\u30d0\u30ec\u30f3\u30bf\u30a4\u30f3\u30c7\u30fc",
+                            "vitality": "\u6d3b\u529b",
+                            "waves": "\u6ce2"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u554f\u984c\u70b9",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "display_time_offset": {
+                "name": "\u8868\u793a\u6642\u9593\u30aa\u30d5\u30bb\u30c3\u30c8"
+            },
+            "horizontal_oscillation_angle": {
+                "name": "\u6c34\u5e73\u632f\u52d5\u89d2"
+            },
+            "vertical_oscillation_angle": {
+                "name": "\u5782\u76f4\u632f\u52d5\u89d2"
+            }
+        },
+        "select": {
+            "night_light": {
+                "name": "\u30ca\u30a4\u30c8\u30e9\u30a4\u30c8",
+                "state": {
+                    "off": "\u30aa\u30d5"
+                }
+            },
+            "time_format": {
+                "name": "\u6642\u9593\u5f62\u5f0f",
+                "state": {
+                    "12h": "12\u6642\u9593\uff08AM/PM\uff09",
+                    "24h": "24\u6642\u9593"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "\u7a7a\u6c17\u8cea\u30ec\u30d9\u30eb",
+                "state": {
+                    "excellent": "\u7d20\u6674\u3089\u3057\u3044",
+                    "good": "\u826f\u597d",
+                    "moderate": "\u9069\u5ea6",
+                    "unhealthy": "\u4e0d\u5065\u5eb7"
+                }
+            },
+            "battery_range": {
+                "name": "\u30d0\u30c3\u30c6\u30ea\u30fc\u7bc4\u56f2",
+                "state": {
+                    "critical": "\u6df1\u523b",
+                    "high": "\u9ad8",
+                    "low": "\u4f4e",
+                    "medium": "\u4e2d"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Bluetooth\u4fe1\u53f7"
+            },
+            "light_level": {
+                "name": "\u30e9\u30a4\u30c8\u30ec\u30d9\u30eb"
+            },
+            "pir_triggered_level": {
+                "name": "PIR\u30bb\u30f3\u30b5\u30fc\u304c\u4f5c\u52d5\u3057\u305f\u30ec\u30d9\u30eb"
+            },
+            "radar_triggered_distance": {
+                "name": "\u30ec\u30fc\u30c0\u30fc\u691c\u77e5\u8ddd\u96e2"
+            },
+            "radar_triggered_level": {
+                "name": "\u30ec\u30fc\u30c0\u30fc\u304c\u4f5c\u52d5\u3057\u305f\u30ec\u30d9\u30eb"
+            },
+            "water_level": {
+                "name": "\u6c34\u4f4d",
+                "state": {
+                    "empty": "\u7a7a",
+                    "high": "\u9ad8",
+                    "low": "\u4f4e",
+                    "medium": "\u4e2d"
+                }
+            },
+            "wifi_signal": {
+                "name": "Wi-Fi\u4fe1\u53f7"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u554f\u984c\u70b9",
+                            "true": "OK"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "false": "\u77ac\u9593\u7684",
+                            "true": "\u5f15\u304f/\u5f15\u3063\u8fbc\u3081\u308b"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "\u30c1\u30e3\u30a4\u30eb\u30c9\u30ed\u30c3\u30af"
+            },
+            "horizontal_oscillation": {
+                "name": "\u6c34\u5e73\u632f\u52d5"
+            },
+            "vertical_oscillation": {
+                "name": "\u5782\u76f4\u632f\u52d5"
+            },
+            "wireless_charging": {
+                "name": "\u30ef\u30a4\u30e4\u30ec\u30b9\u5145\u96fb"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u554f\u984c\u70b9",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "advertising_state_error": {
+            "message": "{address} \u5e83\u544a\u72b6\u614b\u3067\u306f\u3042\u308a\u307e\u305b\u3093"
+        },
+        "device_not_found_error": {
+            "message": "\u30a2\u30c9\u30ec\u30b9 {address}\u306e Switchbot {sensor_type} \u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f\uff1a {reason}"
+        },
+        "device_without_config_entry": {
+            "message": "\u30c7\u30d0\u30a4\u30b9ID {device_id} \u8a2d\u5b9a\u30a8\u30f3\u30c8\u30ea\u3068\u306f\u95a2\u9023\u4ed8\u3051\u3089\u308c\u3066\u3044\u307e\u305b\u3093\u3002"
+        },
+        "not_keypad_vision_device": {
+            "message": "\u3053\u306e\u30b5\u30fc\u30d3\u30b9\u306f\u3001SwitchBot \u9854\u8a8d\u8a3c\u30d1\u30c3\u30c9\u306e\u307f\u306b\u5bfe\u5fdc\u3057\u3066\u3044\u307e\u3059\u3002"
+        },
+        "operation_error": {
+            "message": "\u30a2\u30af\u30b7\u30e7\u30f3\u306e\u5b9f\u884c\u4e2d\u306b\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f: {error}"
+        },
+        "set_fan_state_failed": {
+            "message": "\u30d5\u30a1\u30f3\u3078\u306e\u30b3\u30de\u30f3\u30c9\u9001\u4fe1\u306b\u5931\u6557\u3057\u307e\u3057\u305f\u3002"
+        },
+        "value_error": {
+            "message": "\u69cb\u6210\u30d1\u30e9\u30e1\u30fc\u30bf\u304c\u6b63\u3057\u304f\u306a\u3044\u305f\u3081\u3001Switchbot \u30c7\u30d0\u30a4\u30b9\u306e\u521d\u671f\u5316\u306b\u5931\u6557\u3057\u307e\u3057\u305f: {error}"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "curtain_speed": "\u30ab\u30fc\u30c6\u30f3\u306e\u52d5\u4f5c\u901f\u5ea6",
+                    "lock_force_nightlatch": "\u5f37\u5236\u30ca\u30a4\u30c8\u30e9\u30c3\u30c1\u64cd\u4f5c\u30e2\u30fc\u30c9",
+                    "retry_count": "\u518d\u8a66\u884c\u56de\u6570"
+                },
+                "data_description": {
+                    "curtain_speed": "\u30ab\u30fc\u30c6\u30f3\u306e\u958b\u9589\u901f\u5ea6\uff081\uff5e255\u30011\u304c\u6700\u3082\u9045\u304f\u3001255\u304c\u6700\u3082\u901f\u3044\uff09",
+                    "lock_force_nightlatch": "\u30ca\u30a4\u30c8\u30e9\u30c3\u30c1\u304c\u691c\u51fa\u3055\u308c\u306a\u3044\u5834\u5408\u3067\u3082\u30ca\u30a4\u30c8\u30e9\u30c3\u30c1\u64cd\u4f5c\u30e2\u30fc\u30c9\u3092\u5f37\u5236\u3059\u308b",
+                    "retry_count": "SwitchBot\u30c7\u30d0\u30a4\u30b9\u3078\u306e\u30b3\u30de\u30f3\u30c9\u9001\u4fe1\u306e\u518d\u8a66\u884c\u56de\u6570"
+                }
+            }
+        }
+    },
+    "services": {
+        "add_password": {
+            "description": "\u9854\u8a8d\u8a3c\u30d1\u30c3\u30c9\u306b\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u8ffd\u52a0\u3057\u3066\u304f\u3060\u3055\u3044\u3002",
+            "fields": {
+                "device_id": {
+                    "description": "\u9854\u8a8d\u8a3c\u30d1\u30c3\u30c9\u306e\u30c7\u30d0\u30a4\u30b9ID",
+                    "name": "\u30c7\u30d0\u30a4\u30b9ID"
+                },
+                "password": {
+                    "description": "6\uff5e12\u6841\u306e\u30d1\u30b9\u30ef\u30fc\u30c9",
+                    "name": "\u30d1\u30b9\u30ef\u30fc\u30c9"
+                }
+            },
+            "name": "\u30d1\u30b9\u30ef\u30fc\u30c9\u3092\u8ffd\u52a0"
+        }
+    }
+}

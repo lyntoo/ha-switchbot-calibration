@@ -1,0 +1,507 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Ger\u00e4t ist bereits konfiguriert",
+            "api_error": "Fehler bei der Kommunikation mit der SwitchBot-API: {error_detail}",
+            "no_devices_found": "Keine unterst\u00fctzten SwitchBot-Ger\u00e4te in Reichweite gefunden; Wenn das Ger\u00e4t in Reichweite ist, stelle sicher, dass der Scanner aktives Scannen aktiviert hat, da SwitchBot-Ger\u00e4te nicht mit passiven Scans erkannt werden k\u00f6nnen. Aktive Scans k\u00f6nnen deaktiviert werden, sobald das Ger\u00e4t konfiguriert ist. Wenn du wissen m\u00f6chtest, ob sich das Ger\u00e4t in Reichweite befindet, lade die Diagnose f\u00fcr die Integration herunter, die deinen Bluetooth-Adapter oder Proxy bereitstellt, und pr\u00fcfe, ob die MAC-Adresse des SwitchBot-Ger\u00e4ts vorhanden ist.",
+            "switchbot_unsupported_type": "Nicht unterst\u00fctzter SwitchBot-Typ.",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "error": {
+            "auth_failed": "Authentifizierung fehlgeschlagen: {error_detail}",
+            "encryption_key_invalid": "Code-ID oder Verschl\u00fcsselungscode ist ung\u00fcltig",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Passwort",
+                    "username": "Benutzername"
+                },
+                "data_description": {
+                    "password": "Das Passwort deines SwitchBot-Kontos",
+                    "username": "Der Benutzername deines SwitchBot-Kontos"
+                },
+                "description": "Bitte gib deinen Benutzernamen und dein Passwort f\u00fcr die SwitchBot-App ein. Diese Daten werden nicht gespeichert und dienen nur zum Abrufen von Ger\u00e4temodellinformationen, um die Entdeckung zu automatisieren. Bei Benutzernamen und Kennw\u00f6rtern wird zwischen Gro\u00df- und Kleinschreibung unterschieden."
+            },
+            "confirm": {
+                "description": "M\u00f6chtest du {name} einrichten?"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "Passwort",
+                    "username": "Benutzername"
+                },
+                "data_description": {
+                    "password": "Das Passwort deines SwitchBot-Kontos",
+                    "username": "Der Benutzername deines SwitchBot-Kontos"
+                },
+                "description": "Bitte gib deinen Benutzernamen und dein Passwort f\u00fcr die SwitchBot-App ein. Diese Daten werden nicht gespeichert und nur verwendet, um den Verschl\u00fcsselungscode deines Ger\u00e4ts abzurufen. Bei Benutzernamen und Passw\u00f6rtern muss die Gro\u00df-/Kleinschreibung beachtet werden."
+            },
+            "encrypted_choose_method": {
+                "description": "Ein verschl\u00fcsseltes SwitchBot-Ger\u00e4t kann in Home Assistant auf zwei verschiedene Arten eingerichtet werden. \n \nDu kannst die Code-ID und den Verschl\u00fcsselungscode selbst eingeben, oder Home Assistant kann sie aus deinem SwitchBot-Konto importieren.",
+                "menu_options": {
+                    "encrypted_auth": "SwitchBot-Konto (empfohlen)",
+                    "encrypted_key": "Verschl\u00fcsselungscode manuell eingeben"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "Verschl\u00fcsselungscode",
+                    "key_id": "Code-ID"
+                },
+                "data_description": {
+                    "encryption_key": "Der Verschl\u00fcsselungscode f\u00fcr das Ger\u00e4t",
+                    "key_id": "Die ID des Verschl\u00fcsselungscodes"
+                },
+                "description": "F\u00fcr das Ger\u00e4t {name} ist ein Verschl\u00fcsselungscode erforderlich. Einzelheiten zum Abruf finden sich in der Dokumentation."
+            },
+            "password": {
+                "data": {
+                    "password": "Passwort"
+                },
+                "data_description": {
+                    "password": "Das f\u00fcr den Bot-Ger\u00e4tezugriff erforderliche Passwort"
+                },
+                "description": "F\u00fcr das Ger\u00e4t {name} ist ein Passwort erforderlich."
+            },
+            "select_device": {
+                "data": {
+                    "address": "MAC-Adresse"
+                },
+                "data_description": {
+                    "address": "Die Bluetooth-MAC-Adresse deines SwitchBot-Ger\u00e4ts"
+                }
+            },
+            "user": {
+                "description": "Einer oder mehrere deiner Bluetooth-Adapter verwenden passives Scannen, wodurch m\u00f6glicherweise nicht alle SwitchBot-Ger\u00e4te entdeckt werden. M\u00f6chtest du dich bei deinem SwitchBot-Konto anmelden, um Ger\u00e4teinformationen herunterzuladen und die Entdeckung zu automatisieren? Wenn du dir nicht sicher bist, empfehlen wir dich anzumelden.",
+                "menu_options": {
+                    "cloud_login": "Bei SwitchBot-Konto anmelden",
+                    "select_device": "Ohne Anmeldung fortfahren"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Kalibrierung"
+            },
+            "door_auto_lock_paused": {
+                "name": "Automatische Sperre angehalten"
+            },
+            "door_timeout": {
+                "name": "Zeit\u00fcberschreitung"
+            },
+            "door_unclosed_alarm": {
+                "name": "Nicht-geschlossen-Alarm"
+            },
+            "door_unlocked_alarm": {
+                "name": "Entsperrt-Alarm"
+            },
+            "duress_alarm": {
+                "name": "Notfallalarm"
+            },
+            "half_lock_calibration": {
+                "name": "Kalibrierung der Teilverriegelung"
+            },
+            "half_locked": {
+                "name": "Teilverriegelt"
+            },
+            "high_temperature": {
+                "name": "Hohe Temperatur"
+            },
+            "lockout_alarm": {
+                "name": "Aussperr-Alarm"
+            },
+            "low_temperature": {
+                "name": "Niedrige Temperatur"
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "Teilverriegeln"
+            },
+            "light_sensor": {
+                "name": "Lichtsensor"
+            },
+            "next_image": {
+                "name": "N\u00e4chstes Bild"
+            },
+            "previous_image": {
+                "name": "Vorheriges Bild"
+            },
+            "sync_datetime": {
+                "name": "Datum und Uhrzeit synchronisieren"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "Manuell",
+                            "off": "Aus",
+                            "schedule": "Zeitplan"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "normal": "Normal",
+                            "silent": "Leise"
+                        }
+                    }
+                }
+            },
+            "roller_shade": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "performance": "Hochleistung",
+                            "quiet": "Leise"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "level_1": "Stufe 1",
+                            "level_2": "Stufe 2",
+                            "level_3": "Stufe 3",
+                            "pet": "Haustier",
+                            "sleep": "Schlafen"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Baby",
+                            "natural": "Nat\u00fcrlich",
+                            "normal": "Normal",
+                            "sleep": "Schlaf"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Baby",
+                            "custom_natural": "Angepasst nat\u00fcrlich",
+                            "natural": "Nat\u00fcrlich",
+                            "normal": "Normal",
+                            "sleep": "Schlaf"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "drying_filter": "Filtertrocknung",
+                            "high": "Hoch",
+                            "low": "Niedrig",
+                            "medium": "Mittel",
+                            "quiet": "Leise",
+                            "sleep": "Schlaf",
+                            "target_humidity": "Soll-Luftfeuchtigkeit"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "Leuchte"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "Alarm",
+                            "autumn": "Herbst",
+                            "breathing": "Atmung",
+                            "cherry_blossom": "Kirschbl\u00fcte",
+                            "christmas": "Weihnachten",
+                            "colorful": "Bunt",
+                            "cool": "K\u00fchl",
+                            "dream": "Traum",
+                            "dynamic": "Dynamisch",
+                            "energy": "Energie",
+                            "fade": "Verblassen",
+                            "fireworks": "Feuerwerk",
+                            "flashing": "Blinken",
+                            "flickering": "Flackern",
+                            "flow": "Fluss",
+                            "forest": "Wald",
+                            "game": "Spiel",
+                            "halloween": "Halloween",
+                            "heartbeat": "Herzschlag",
+                            "lightning": "Blitzschlag",
+                            "meditation": "Meditation",
+                            "modern": "Modern",
+                            "movie": "Film",
+                            "mystery": "Mystery",
+                            "new_year": "Neujahr",
+                            "ocean": "Ozean",
+                            "party": "Party",
+                            "rainbow": "Regenbogen",
+                            "relax": "Entspannen",
+                            "rock": "Rock",
+                            "romance": "Romantik",
+                            "rose": "Rose",
+                            "sleep": "Schlaf",
+                            "smooth": "Smooth",
+                            "starlight": "Sternenlicht",
+                            "starlit_sky": "Sternenhimmel",
+                            "strobe": "Stroboskop",
+                            "sunrise": "Sonnenaufgang",
+                            "sunset": "Sonnenuntergang",
+                            "valentine_day": "Valentinstag",
+                            "vitality": "Vitalit\u00e4t",
+                            "waves": "Wellen"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "display_time_offset": {
+                "name": "Display-Zeitversatz"
+            },
+            "horizontal_oscillation_angle": {
+                "name": "Winkel der horizontalen Oszillation"
+            },
+            "vertical_oscillation_angle": {
+                "name": "Winkel der vertikalen Oszillation"
+            }
+        },
+        "select": {
+            "night_light": {
+                "name": "Nachtlicht",
+                "state": {
+                    "bright": "Hell",
+                    "off": "Aus",
+                    "soft": "Sanft"
+                }
+            },
+            "time_format": {
+                "name": "Zeitformat",
+                "state": {
+                    "12h": "12 Stunden (AM/PM)",
+                    "24h": "24 Stunden"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "Luftqualit\u00e4tsstufe",
+                "state": {
+                    "excellent": "Ausgezeichnet",
+                    "good": "Gut",
+                    "moderate": "M\u00e4\u00dfig",
+                    "unhealthy": "Ungesund"
+                }
+            },
+            "battery_range": {
+                "name": "Batteriereichweite",
+                "state": {
+                    "critical": "Kritisch",
+                    "high": "Hoch",
+                    "low": "Niedrig",
+                    "medium": "Mittel"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Bluetooth-Signal"
+            },
+            "light_level": {
+                "name": "Lichtst\u00e4rke"
+            },
+            "pir_triggered_level": {
+                "name": "PIR-Ausl\u00f6sepegel"
+            },
+            "radar_triggered_distance": {
+                "name": "Radar-Ausl\u00f6seentfernung"
+            },
+            "radar_triggered_level": {
+                "name": "Radar-Ausl\u00f6sepegel"
+            },
+            "water_level": {
+                "name": "Wasserstand",
+                "state": {
+                    "empty": "Leer",
+                    "high": "Hoch",
+                    "low": "Niedrig",
+                    "medium": "Mittel"
+                }
+            },
+            "wifi_signal": {
+                "name": "WLAN-Signal"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "false": "Taster",
+                            "true": "Umschalter"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "Kindersicherung"
+            },
+            "horizontal_oscillation": {
+                "name": "Horizontale Oszillation"
+            },
+            "vertical_oscillation": {
+                "name": "Vertikale Oszillation"
+            },
+            "wireless_charging": {
+                "name": "Kabelloses Laden"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "advertising_state_error": {
+            "message": "{address} sendet keine Zustands-Advertisements"
+        },
+        "device_not_found_error": {
+            "message": "Switchbot {sensor_type} mit Adresse {address} konnte nicht gefunden werden: {reason}"
+        },
+        "device_without_config_entry": {
+            "message": "Die Ger\u00e4te-ID {device_id} ist keinem Konfigurationseintrag zugeordnet."
+        },
+        "not_keypad_vision_device": {
+            "message": "Dieser Dienst wird nur f\u00fcr SwitchBot Keypad-Vision-Ger\u00e4te unterst\u00fctzt."
+        },
+        "operation_error": {
+            "message": "Beim Ausf\u00fchren der Aktion ist ein Fehler aufgetreten: {error}"
+        },
+        "set_fan_state_failed": {
+            "message": "Befehl konnte nicht an den Ventilator gesendet werden."
+        },
+        "value_error": {
+            "message": "Die Initialisierung des Switchbot-Ger\u00e4ts ist aufgrund falscher Konfigurationsparameter fehlgeschlagen: {error}"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "curtain_speed": "Geschwindigkeit des Vorhangs",
+                    "lock_force_nightlatch": "Falle-Funktion erzwingen",
+                    "retry_count": "Anzahl der Wiederholungen"
+                },
+                "data_description": {
+                    "curtain_speed": "Geschwindigkeit f\u00fcr das \u00d6ffnen und Schlie\u00dfen des Vorhangs (1\u2013255, wobei 1 der langsamste und 255 der schnellste Wert ist)",
+                    "lock_force_nightlatch": "Falle-Funktion zum \u00d6ffnen bei festen Knauf erzwingen, auch wenn diese nicht erkannt wird",
+                    "retry_count": "Wie oft das Senden von Befehlen an deine SwitchBot-Ger\u00e4te erneut versucht werden soll"
+                }
+            }
+        }
+    },
+    "services": {
+        "add_password": {
+            "description": "F\u00fcge deinem Keypad-Vision-Ger\u00e4t ein Passwort hinzu.",
+            "fields": {
+                "device_id": {
+                    "description": "Die Ger\u00e4te-ID des Keypad-Vision-Ger\u00e4ts",
+                    "name": "Ger\u00e4te-ID"
+                },
+                "password": {
+                    "description": "Ein 6- bis 12-stelliges Passwort",
+                    "name": "Passwort"
+                }
+            },
+            "name": "Passwort hinzuf\u00fcgen"
+        }
+    }
+}

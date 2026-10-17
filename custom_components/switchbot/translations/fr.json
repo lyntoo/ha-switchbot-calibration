@@ -1,0 +1,566 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "L'appareil est d\u00e9j\u00e0 configur\u00e9",
+            "api_error": "Erreur lors de la communication avec l'API SwitchBot : {error_detail}",
+            "no_devices_found": "Aucun appareil SwitchBot pris en charge n'a \u00e9t\u00e9 trouv\u00e9 \u00e0 proximit\u00e9\u00a0; Si l'appareil est \u00e0 proximit\u00e9, assurez-vous que le scanner a activ\u00e9 le balayage actif, car les appareils SwitchBot ne peuvent pas \u00eatre d\u00e9couverts avec des balayages passifs. Les balayages actifs peuvent \u00eatre d\u00e9sactiv\u00e9s une fois que l'appareil est configur\u00e9. Si vous avez besoin d'\u00e9claircissements pour savoir si l'appareil est \u00e0 port\u00e9e, t\u00e9l\u00e9chargez les diagnostics de l'int\u00e9gration qui fournit votre adaptateur Bluetooth ou votre proxy et v\u00e9rifiez si l'adresse MAC de l'appareil SwitchBot est pr\u00e9sente.",
+            "switchbot_unsupported_type": "Type de SwitchBot non pris en charge.",
+            "unknown": "Erreur inattendue"
+        },
+        "error": {
+            "auth_failed": "\u00c9chec de l'authentification : {error_detail}",
+            "encryption_key_invalid": "L'identifiant de cl\u00e9 ou la cl\u00e9 de chiffrement est invalide",
+            "unknown": "Erreur inattendue"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Mot de passe",
+                    "username": "Nom d'utilisateur"
+                },
+                "data_description": {
+                    "password": "Le mot de passe de votre compte SwitchBot",
+                    "username": "Le nom d'utilisateur de votre compte SwitchBot"
+                },
+                "description": "Veuillez fournir le nom d'utilisateur et le mot de passe de votre application SwitchBot. Ces donn\u00e9es ne seront pas enregistr\u00e9es et serviront uniquement \u00e0 r\u00e9cup\u00e9rer les informations sur le mod\u00e8le de l'appareil afin d'automatiser la d\u00e9couverte. Les noms d'utilisateur et les mots de passe sont sensibles \u00e0 la casse."
+            },
+            "confirm": {
+                "description": "Voulez-vous configurer {name} ?"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "Mot de passe",
+                    "username": "Nom d'utilisateur"
+                },
+                "data_description": {
+                    "password": "Le mot de passe de votre compte SwitchBot",
+                    "username": "Le nom d'utilisateur de votre compte SwitchBot"
+                },
+                "description": "Veuillez fournir le nom d'utilisateur et le mot de passe de votre application SwitchBot. Ces donn\u00e9es ne seront pas enregistr\u00e9es et serviront uniquement \u00e0 r\u00e9cup\u00e9rer la cl\u00e9 de chiffrement de votre appareil. Les noms d'utilisateur et les mots de passe sont sensibles \u00e0 la casse."
+            },
+            "encrypted_choose_method": {
+                "description": "Un appareil SwitchBot chiffr\u00e9 peut \u00eatre configur\u00e9 dans Home Assistant de deux mani\u00e8res diff\u00e9rentes.\n\nVous pouvez saisir vous-m\u00eame l'identifiant de cl\u00e9 et la cl\u00e9 de chiffrement, ou Home Assistant peut les importer depuis votre compte SwitchBot.",
+                "menu_options": {
+                    "encrypted_auth": "Compte SwitchBot (recommand\u00e9)",
+                    "encrypted_key": "Saisir manuellement la cl\u00e9 de chiffrement"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "Cl\u00e9 de chiffrement",
+                    "key_id": "ID de la cl\u00e9"
+                },
+                "data_description": {
+                    "encryption_key": "La cl\u00e9 de chiffrement de l'appareil",
+                    "key_id": "L'identifiant de la cl\u00e9 de chiffrement"
+                },
+                "description": "L'appareil {name} n\u00e9cessite une cl\u00e9 de chiffrement, vous trouverez dans la documentation des d\u00e9tails sur la fa\u00e7on de l'obtenir."
+            },
+            "password": {
+                "data": {
+                    "password": "Mot de passe"
+                },
+                "data_description": {
+                    "password": "Le mot de passe requis pour acc\u00e9der \u00e0 l'appareil Bot"
+                },
+                "description": "L'appareil {name} requiert un mot de passe"
+            },
+            "select_device": {
+                "data": {
+                    "address": "Adresse MAC"
+                },
+                "data_description": {
+                    "address": "L'adresse MAC Bluetooth de votre appareil SwitchBot"
+                }
+            },
+            "user": {
+                "description": "Un ou plusieurs de vos adaptateurs Bluetooth utilisent l'analyse passive, qui peut ne pas d\u00e9tecter tous les appareils SwitchBot. Souhaitez-vous vous connecter \u00e0 votre compte SwitchBot pour t\u00e9l\u00e9charger les informations des appareils et automatiser la d\u00e9couverte\u00a0? Si vous n'\u00eates pas s\u00fbr, nous vous recommandons de vous connecter.",
+                "menu_options": {
+                    "cloud_login": "Se connecter au compte SwitchBot",
+                    "select_device": "Continuer sans se connecter"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Calibration"
+            },
+            "door_auto_lock_paused": {
+                "name": "Verrouillage automatique en pause"
+            },
+            "door_timeout": {
+                "name": "D\u00e9lai d'expiration"
+            },
+            "door_unclosed_alarm": {
+                "name": "Alarme de non-fermeture"
+            },
+            "door_unlocked_alarm": {
+                "name": "Alarme de d\u00e9verrouillage"
+            },
+            "half_lock_calibration": {
+                "name": "\u00c9talonnage du demi-verrouillage"
+            },
+            "half_locked": {
+                "name": "Demi-verrouill\u00e9"
+            },
+            "calibration_active": {
+                "name": "Calibration en cours"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "Manuel",
+                            "off": "D\u00e9sactiv\u00e9",
+                            "schedule": "Planification"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e8me",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e8me",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "level_1": "Niveau 1",
+                            "level_2": "Niveau 2",
+                            "level_3": "Niveau 3",
+                            "pet": "Animal domestique",
+                            "sleep": "Nuit"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e8me",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "B\u00e9b\u00e9",
+                            "natural": "Naturel",
+                            "normal": "Normal",
+                            "sleep": "Nuit"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "B\u00e9b\u00e9",
+                            "custom_natural": "Naturel personnalis\u00e9",
+                            "natural": "Naturel",
+                            "normal": "Normal",
+                            "sleep": "Nuit"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "drying_filter": "S\u00e9chage du filtre",
+                            "high": "\u00c9lev\u00e9",
+                            "low": "Faible",
+                            "medium": "Moyen",
+                            "quiet": "Silencieux",
+                            "sleep": "Sommeil",
+                            "target_humidity": "Humidit\u00e9 cible"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e8me",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "Lumi\u00e8re"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "Alarme",
+                            "autumn": "Automne",
+                            "breathing": "Respiration",
+                            "cherry_blossom": "Fleur de cerisier",
+                            "christmas": "No\u00ebl",
+                            "colorful": "Color\u00e9",
+                            "cool": "Froid",
+                            "dream": "R\u00eave",
+                            "dynamic": "Dynamique",
+                            "energy": "\u00c9nergie",
+                            "fade": "Fondu",
+                            "fireworks": "Feux d'artifice",
+                            "flashing": "Clignotement",
+                            "flickering": "Scintillement",
+                            "flow": "Flux",
+                            "forest": "For\u00eat",
+                            "game": "Jeu",
+                            "halloween": "Halloween",
+                            "heartbeat": "Battement de c\u0153ur",
+                            "lightning": "Foudre",
+                            "meditation": "M\u00e9ditation",
+                            "modern": "Moderne",
+                            "movie": "Film",
+                            "mystery": "Myst\u00e8re",
+                            "new_year": "Nouvel An",
+                            "ocean": "Oc\u00e9an",
+                            "party": "F\u00eate",
+                            "rainbow": "Arc-en-ciel",
+                            "relax": "D\u00e9tente",
+                            "rock": "Rock",
+                            "romance": "Romance",
+                            "rose": "Rose",
+                            "sleep": "Sommeil",
+                            "smooth": "Doux",
+                            "starlight": "Lumi\u00e8re des \u00e9toiles",
+                            "starlit_sky": "Ciel \u00e9toil\u00e9",
+                            "strobe": "Stroboscope",
+                            "sunrise": "Lever du soleil",
+                            "sunset": "Coucher du soleil",
+                            "valentine_day": "Saint-Valentin",
+                            "vitality": "Vitalit\u00e9",
+                            "waves": "Vagues"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e8me",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "display_time_offset": {
+                "name": "D\u00e9calage de l'heure affich\u00e9e"
+            },
+            "horizontal_oscillation_angle": {
+                "name": "Angle d'oscillation horizontale"
+            },
+            "vertical_oscillation_angle": {
+                "name": "Angle d'oscillation verticale"
+            }
+        },
+        "select": {
+            "night_light": {
+                "name": "Veilleuse",
+                "state": {
+                    "bright": "Lumineux",
+                    "off": "D\u00e9sactiv\u00e9",
+                    "soft": "Doux"
+                }
+            },
+            "time_format": {
+                "name": "Format de l'heure",
+                "state": {
+                    "12h": "12 heures (AM/PM)",
+                    "24h": "24 heures"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "Qualit\u00e9 de l'air",
+                "state": {
+                    "excellent": "Excellent",
+                    "good": "Bon",
+                    "moderate": "Mod\u00e9r\u00e9",
+                    "unhealthy": "Malsain"
+                }
+            },
+            "battery_range": {
+                "name": "Niveau de batterie",
+                "state": {
+                    "critical": "Critique",
+                    "high": "\u00c9lev\u00e9",
+                    "low": "Faible",
+                    "medium": "Moyen"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Signal Bluetooth"
+            },
+            "light_level": {
+                "name": "Niveau de luminosit\u00e9"
+            },
+            "water_level": {
+                "name": "Niveau d'eau",
+                "state": {
+                    "empty": "Vide",
+                    "high": "\u00c9lev\u00e9",
+                    "low": "Faible",
+                    "medium": "Moyen"
+                }
+            },
+            "wifi_signal": {
+                "name": "Signal Wi-Fi"
+            },
+            "calibration_step": {
+                "name": "\u00c9tape de calibration",
+                "state": {
+                    "idle": "Au repos",
+                    "step_1": "\u00c9tape 1 : ferm\u00e9 vers le bas",
+                    "step_2": "\u00c9tape 2 : ouvert",
+                    "step_3": "\u00c9tape 3 : ferm\u00e9 vers le haut",
+                    "step_4": "\u00c9tape 4 : ouvert"
+                }
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e8me",
+                            "true": "OK"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "false": "Momentan\u00e9",
+                            "true": "Tirer/R\u00e9tracter"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "S\u00e9curit\u00e9 enfant"
+            },
+            "horizontal_oscillation": {
+                "name": "Oscillation horizontale"
+            },
+            "vertical_oscillation": {
+                "name": "Oscillation verticale"
+            },
+            "wireless_charging": {
+                "name": "Charge sans fil"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e8me",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "Demi-verrouiller"
+            },
+            "light_sensor": {
+                "name": "Capteur de luminosit\u00e9"
+            },
+            "next_image": {
+                "name": "Image suivante"
+            },
+            "previous_image": {
+                "name": "Image pr\u00e9c\u00e9dente"
+            },
+            "sync_datetime": {
+                "name": "Synchroniser la date et l'heure"
+            }
+        }
+    },
+    "exceptions": {
+        "advertising_state_error": {
+            "message": "{address} ne diffuse pas son \u00e9tat"
+        },
+        "device_not_found_error": {
+            "message": "Impossible de trouver le SwitchBot {sensor_type} avec l'adresse {address}\u00a0: {reason}"
+        },
+        "device_without_config_entry": {
+            "message": "L'identifiant d'appareil {device_id} n'est associ\u00e9 \u00e0 aucune entr\u00e9e de configuration."
+        },
+        "not_keypad_vision_device": {
+            "message": "Cette action n'est prise en charge que pour les appareils SwitchBot Keypad Vision."
+        },
+        "operation_error": {
+            "message": "Une erreur s'est produite lors de l'ex\u00e9cution de l'action\u00a0: {error}"
+        },
+        "set_fan_state_failed": {
+            "message": "\u00c9chec de l'envoi de la commande au ventilateur."
+        },
+        "value_error": {
+            "message": "L'initialisation de l'appareil SwitchBot a \u00e9chou\u00e9 en raison de param\u00e8tres de configuration incorrects\u00a0: {error}"
+        },
+        "blind_tilt_calibrating": {
+            "message": "Une calibration est en cours sur ce store. Terminez-la (Configurer > Calibrer le store) avant de le commander."
+        },
+        "blind_tilt_uncalibrated": {
+            "message": "Le store \u00ab {name} \u00bb n'est PAS calibr\u00e9 : ses commandes d'ouverture, de fermeture et de position sont d\u00e9sactiv\u00e9es pour \u00e9viter des mouvements impr\u00e9cis ou risqu\u00e9s. Calibrez-le d'abord (Param\u00e8tres > Appareils et services > SwitchBot > le store > Configurer > Calibrer le store)."
+        },
+        "blind_tilt_no_frame": {
+            "message": "Aucun \u00e9tat de calibration re\u00e7u du store pour le moment."
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "curtain_speed": "Vitesse de d\u00e9placement du rideau",
+                    "lock_force_nightlatch": "Forcer le mode de fonctionnement Nightlatch",
+                    "retry_count": "Nombre de nouvelles tentatives"
+                },
+                "data_description": {
+                    "curtain_speed": "Vitesse des op\u00e9rations d'ouverture et de fermeture du rideau (1-255, o\u00f9 1 correspond au plus lent et 255 au plus rapide)",
+                    "lock_force_nightlatch": "Forcer le mode de fonctionnement Nightlatch m\u00eame si Nightlatch n'est pas d\u00e9tect\u00e9",
+                    "retry_count": "Nombre de tentatives d'envoi des commandes \u00e0 vos appareils SwitchBot"
+                },
+                "title": "Options SwitchBot",
+                "menu_options": {
+                    "settings": "R\u00e9glages",
+                    "calibrate": "Calibrer le store"
+                }
+            },
+            "calibrate": {
+                "title": "Calibration du Blind Tilt",
+                "submit": "D\u00e9marrer la calibration",
+                "description": "\u00c9tat de calibration du store : {state}  (\u2705 calibr\u00e9 \u00b7 \u274c non calibr\u00e9 \u00b7 \u2753 inconnu).\n\n\u26a0\ufe0f D\u00e9marrer EFFACE la calibration actuelle et elle ne peut pas \u00eatre restaur\u00e9e. Il n'y a pas d'annulation : une fois d\u00e9marr\u00e9e, la calibration doit \u00eatre men\u00e9e jusqu'au bout (4 \u00e9tapes). Si quelque chose se passe mal, on recommence simplement du d\u00e9but.\n\nVous allez tourner la tige \u00e0 la main en 4 \u00e9tapes : ferm\u00e9 vers le bas, ouvert, ferm\u00e9 vers le haut, ouvert. Appuyez sur le bouton quand vous \u00eates devant le store.\n\n\u2139\ufe0f Tant qu'un store n'est pas calibr\u00e9, Home Assistant refuse ses commandes d'ouverture, de fermeture et de position."
+            },
+            "reprise": {
+                "title": "Calibration en cours",
+                "description": "Une calibration est d\u00e9j\u00e0 en cours sur ce store.",
+                "menu_options": {
+                    "continue_calibration": "Continuer l\u00e0 o\u00f9 elle s'est arr\u00eat\u00e9e",
+                    "restart_calibration": "Recommencer du d\u00e9but"
+                }
+            },
+            "etape_1": {
+                "title": "\u00c9tape 1 sur 4 \u2013 ferm\u00e9 vers le bas",
+                "submit": "Suivant",
+                "description": "Tournez la tige, dans un seul sens, jusqu'\u00e0 ce que le store soit COMPL\u00c8TEMENT FERM\u00c9 VERS LE BAS. Arr\u00eatez de tourner, puis appuyez sur Suivant.\n\nSi le store n'est pas encore pr\u00eat, un message vous dit quoi faire. Rien n'est enregistr\u00e9 tant qu'il n'est pas pr\u00eat."
+            },
+            "etape_2": {
+                "title": "\u00c9tape 2 sur 4 \u2013 ouvert",
+                "submit": "Suivant",
+                "description": "Tournez la tige, dans un seul sens, jusqu'\u00e0 ce que le store soit COMPL\u00c8TEMENT OUVERT (\u00e0 plat). Arr\u00eatez de tourner, puis appuyez sur Suivant.\n\nSi le store n'est pas encore pr\u00eat, un message vous dit quoi faire. Rien n'est enregistr\u00e9 tant qu'il n'est pas pr\u00eat."
+            },
+            "etape_3": {
+                "title": "\u00c9tape 3 sur 4 \u2013 ferm\u00e9 vers le haut",
+                "submit": "Suivant",
+                "description": "Tournez la tige dans le sens OPPOS\u00c9 \u00e0 celui de l'\u00e9tape 1, dans un seul sens, jusqu'\u00e0 ce que le store soit COMPL\u00c8TEMENT FERM\u00c9 VERS LE HAUT. Arr\u00eatez de tourner, puis appuyez sur Suivant.\n\nSi le store n'est pas encore pr\u00eat, un message vous dit quoi faire. Rien n'est enregistr\u00e9 tant qu'il n'est pas pr\u00eat."
+            },
+            "etape_4": {
+                "title": "\u00c9tape 4 sur 4 \u2013 ouvert (derni\u00e8re \u00e9tape)",
+                "submit": "Terminer",
+                "description": "Tournez la tige, dans un seul sens, jusqu'\u00e0 ce que le store soit COMPL\u00c8TEMENT OUVERT (\u00e0 plat). Arr\u00eatez de tourner, puis appuyez sur Terminer.\n\nLa calibration se termine et le store est v\u00e9rifi\u00e9. Si le store n'est pas encore pr\u00eat, un message vous dit quoi faire."
+            }
+        },
+        "abort": {
+            "calibration_done": "\u2705 Calibration termin\u00e9e : le store se d\u00e9clare calibr\u00e9.",
+            "calibration_failed": "La calibration a \u00e9chou\u00e9 ({detail}). Le store peut rester NON calibr\u00e9 : recommencez du d\u00e9but.",
+            "calibration_failed_timeout": "Le store n'a pas r\u00e9pondu \u00e0 temps ({detail}). V\u00e9rifiez le signal Bluetooth, puis recommencez du d\u00e9but. Le store peut rester NON calibr\u00e9.",
+            "calibration_failed_comm": "Erreur de communication avec le store ({detail}). Recommencez du d\u00e9but. Le store peut rester NON calibr\u00e9.",
+            "calibration_failed_refused": "Le store a refus\u00e9 une commande de calibration ({detail}). Recommencez du d\u00e9but. Le store peut rester NON calibr\u00e9.",
+            "calibration_failed_stop_unconfirmed": "Le store n'a pas confirm\u00e9 la fin de la calibration ({detail}). V\u00e9rifiez son \u00e9tat, puis recommencez du d\u00e9but.",
+            "calibration_failed_not_calibrated": "La calibration est termin\u00e9e mais le store ne se d\u00e9clare pas calibr\u00e9. Recommencez du d\u00e9but.",
+            "calibration_unavailable": "Le store n'est pas disponible pour la calibration (int\u00e9gration non charg\u00e9e)."
+        },
+        "error": {
+            "not_ready": "Le store n'est pas encore pr\u00eat. Terminez de tourner la tige, arr\u00eatez-vous, puis appuyez de nouveau sur le bouton.",
+            "direction_error": "\u26a0\ufe0f Le store signale une erreur de sens : tournez la tige dans l'autre sens, puis appuyez de nouveau sur le bouton.",
+            "not_at_step": "Le store n'est pas encore pass\u00e9 \u00e0 cette \u00e9tape. Attendez quelques secondes, puis appuyez de nouveau sur le bouton.",
+            "save_failed": "La position n'a pas pu \u00eatre enregistr\u00e9e ({detail}). Appuyez de nouveau sur le bouton ; si cela \u00e9choue encore, fermez cette fen\u00eatre et recommencez."
+        }
+    },
+    "services": {
+        "add_password": {
+            "description": "Ajoute un mot de passe \u00e0 votre appareil Keypad Vision.",
+            "fields": {
+                "device_id": {
+                    "description": "L'identifiant de l'appareil Keypad Vision",
+                    "name": "ID de l'appareil"
+                },
+                "password": {
+                    "description": "Un mot de passe de 6 \u00e0 12 chiffres",
+                    "name": "Mot de passe"
+                }
+            },
+            "name": "Ajouter un mot de passe"
+        },
+        "calibration_start": {
+            "name": "D\u00e9marrer la calibration du Blind Tilt",
+            "description": "D\u00e9marre la calibration d'un Blind Tilt et la diffusion de son \u00e9tat. Tournez ensuite la tige \u00e0 la main et enregistrez chaque position."
+        },
+        "calibration_save": {
+            "name": "Enregistrer la position de calibration",
+            "description": "Enregistre la position de l'\u00e9tape courante. Refus\u00e9 si le store n'est pas pr\u00eat ou signale une erreur de sens."
+        },
+        "calibration_finish": {
+            "name": "Terminer la calibration du Blind Tilt",
+            "description": "Termine la calibration. Le store reste non calibr\u00e9 si les 4 positions n'ont pas toutes \u00e9t\u00e9 enregistr\u00e9es."
+        },
+        "calibration_abort": {
+            "name": "Annuler la calibration du Blind Tilt",
+            "description": "Abandonne la calibration. Le store reste NON calibr\u00e9 tant qu'une calibration compl\u00e8te n'est pas refaite."
+        },
+        "calibration_status": {
+            "name": "\u00c9tat de la calibration du Blind Tilt",
+            "description": "Retourne l'\u00e9tape courante, si le store est pr\u00eat, l'erreur de sens et le compteur de position."
+        }
+    },
+    "issues": {
+        "blind_tilt_uncalibrated": {
+            "title": "Store non calibr\u00e9 : {name}",
+            "description": "Le store SwitchBot \u00ab {name} \u00bb n'est pas calibr\u00e9. Tant qu'il ne l'est pas, ses commandes d'ouverture, de fermeture et de position sont D\u00c9SACTIV\u00c9ES dans Home Assistant (les pourcentages seraient peu fiables et les mouvements risqu\u00e9s) : les automations qui le commandent \u00e9choueront.\n\nPour corriger : Param\u00e8tres > Appareils et services > SwitchBot > {name} > Configurer > Calibrer le store, puis suivez les 4 \u00e9tapes."
+        }
+    }
+}

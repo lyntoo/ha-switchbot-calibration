@@ -1,0 +1,40 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Naprava je \u017ee konfigurirana",
+            "no_devices_found": "V dosegu ni bilo najdenih podprtih naprav SwitchBot; \u010ce je naprava v dosegu, se prepri\u010dajte, da je v skenerju omogo\u010deno aktivno skeniranje, saj naprav SwitchBot ni mogo\u010de odkriti s pasivnim skeniranjem. Aktivno skeniranje je mogo\u010de onemogo\u010diti, ko je naprava konfigurirana. \u010ce potrebujete pojasnilo o tem, ali je naprava v dosegu, prenesite diagnostiko za integracijo, ki zagotavlja va\u0161 adapter Bluetooth ali proxy, in preverite, ali je prisoten naslov MAC naprave SwitchBot.",
+            "unknown": "Nepri\u010dakovana napaka"
+        },
+        "step": {
+            "encrypted_auth": {
+                "data": {
+                    "password": "Geslo",
+                    "username": "Uporabni\u0161ko ime"
+                }
+            },
+            "password": {
+                "data": {
+                    "password": "Geslo"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "door_unclosed_alarm": {
+                "name": "Nezaprt alarm"
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "quiet": "Tiho"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

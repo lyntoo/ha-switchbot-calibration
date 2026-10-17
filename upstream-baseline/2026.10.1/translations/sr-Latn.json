@@ -1,0 +1,507 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Ure\u0111aj je ve\u0107 pode\u0161en",
+            "api_error": "Gre\u0161ka prilikom komunikacije sa SwitchBot API: {error_detail}",
+            "no_devices_found": "Nisu prona\u0111eni podr\u017eani SwitchBot ure\u0111aji u dometu. Ako je ure\u0111aj u dometu, uverite se da skener ima omogu\u0107eno aktivno skeniranje, jer SwitchBot ure\u0111aji ne mogu biti otkriveni putem pasivnog skeniranja. Aktivno skeniranje se mo\u017ee onemogu\u0107iti nakon \u0161to se ure\u0111aj konfiguri\u0161e. Ako niste sigurni da li je ure\u0111aj u dometu, preuzmite dijagnostiku za integraciju koja obezbe\u0111uje va\u0161 Bluetooth adapter ili proksi i proverite da li je prisutna MAC adresa SwitchBot ure\u0111aja.",
+            "switchbot_unsupported_type": "Nepodr\u017ean SwitchBot tip.",
+            "unknown": "Neo\u010dekivana gre\u0161ka"
+        },
+        "error": {
+            "auth_failed": "Prijava nije uspela: {error_detail}",
+            "encryption_key_invalid": "ID klju\u010da ili klju\u010d za \u0161ifrovanje je neispravan",
+            "unknown": "Neo\u010dekivana gre\u0161ka"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Lozinka",
+                    "username": "Korisni\u010dko ime"
+                },
+                "data_description": {
+                    "password": "Lozinka va\u0161eg SwitchBot naloga",
+                    "username": "Korisni\u010dko ime va\u0161eg SwitchBot naloga"
+                },
+                "description": "Molimo vas da unesete korisni\u010dko ime i lozinku za svoju SwitchBot aplikaciju. Ovi podaci ne\u0107e biti sa\u010duvani i koriste se isklju\u010divo za preuzimanje informacija o modelima ure\u0111aja kako bi se automatizovalo."
+            },
+            "confirm": {
+                "description": "\u017delite li da podesite {name}?"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "Lozinka",
+                    "username": "Korisni\u010dko ime"
+                },
+                "data_description": {
+                    "password": "Lozinka va\u0161eg SwitchBot naloga",
+                    "username": "Korisni\u010dko ime va\u0161eg SwitchBot naloga"
+                },
+                "description": "Unesite korisni\u010dko ime i lozinku za SwitchBot aplikaciju. Ovi podaci ne\u0107e biti sa\u010duvani i koristi\u0107e se samo za preuzimanje klju\u010da za \u0161ifrovanje va\u0161eg ure\u0111aja. Korisni\u010dka imena i lozinke razlikuju mala i velika slova."
+            },
+            "encrypted_choose_method": {
+                "description": "\u0160ifrovani SwitchBot ure\u0111aj mo\u017ee se podesiti u Home Assistant-u na dva na\u010dina.\n\nMo\u017eete sami uneti ID klju\u010da i klju\u010d za \u0161ifrovanje ili Home Assistant mo\u017ee da ih uveze sa va\u0161eg SwitchBot naloga.",
+                "menu_options": {
+                    "encrypted_auth": "SwitchBot nalog (preporu\u010deno)",
+                    "encrypted_key": "Ru\u010dno unesite klju\u010d za \u0161ifrovanje"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "Klju\u010d za \u0161ifrovanje",
+                    "key_id": "ID klju\u010da"
+                },
+                "data_description": {
+                    "encryption_key": "Enkripcioni klju\u010d za ure\u0111aj",
+                    "key_id": "ID klju\u010da za \u0161ifrovanje"
+                },
+                "description": "Ure\u0111aj {name} zahteva klju\u010d za \u0161ifrovanje. Detalje o tome kako ga nabaviti mo\u017eete prona\u0107i u dokumentaciji."
+            },
+            "password": {
+                "data": {
+                    "password": "Lozinka"
+                },
+                "data_description": {
+                    "password": "Lozinka potrebna za pristup Bot ure\u0111aju"
+                },
+                "description": "Ure\u0111aj {name} zahteva lozinku"
+            },
+            "select_device": {
+                "data": {
+                    "address": "MAC adresa"
+                },
+                "data_description": {
+                    "address": "Bluetooth MAC adresa va\u0161eg SwitchBot ure\u0111aja"
+                }
+            },
+            "user": {
+                "description": "Jedan ili vi\u0161e va\u0161ih Bluetooth adaptera koristi pasivno skeniranje, zbog \u010dega mo\u017eda ne\u0107e biti otkriveni svi SwitchBot ure\u0111aji. Da li \u017eelite da se prijavite na svoj SwitchBot nalog kako biste preuzeli informacije o ure\u0111ajima i automatizovali njihovo otkrivanje? Ako niste sigurni, preporu\u010dujemo da se prijavite.",
+                "menu_options": {
+                    "cloud_login": "Prijavite se na SwitchBot nalog",
+                    "select_device": "Nastavite bez prijave"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Kalibracija"
+            },
+            "door_auto_lock_paused": {
+                "name": "Automatsko zaklju\u010davanje je pauzirano"
+            },
+            "door_timeout": {
+                "name": "Vreme \u010dekanja (u sekundama)"
+            },
+            "door_unclosed_alarm": {
+                "name": "Alarm nezatvorenog stanja"
+            },
+            "door_unlocked_alarm": {
+                "name": "Alarm otklju\u010davanja"
+            },
+            "duress_alarm": {
+                "name": "Alarm za prinudu"
+            },
+            "half_lock_calibration": {
+                "name": "Kalibracija delimi\u010dnog zaklju\u010davanja"
+            },
+            "half_locked": {
+                "name": "Delimi\u010dno zaklju\u010dano"
+            },
+            "high_temperature": {
+                "name": "Visoka temperatura"
+            },
+            "lockout_alarm": {
+                "name": "Alarm za zaklju\u010davanje"
+            },
+            "low_temperature": {
+                "name": "Niska temperatura"
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "Delimi\u010dno zaklju\u010daj"
+            },
+            "light_sensor": {
+                "name": "Senzor svetlosti"
+            },
+            "next_image": {
+                "name": "Slede\u0107a slika"
+            },
+            "previous_image": {
+                "name": "Prethodna slika"
+            },
+            "sync_datetime": {
+                "name": "Sinhronizuj datum i vreme"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "Ru\u010dno",
+                            "off": "Isklju\u010deno",
+                            "schedule": "Raspored"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "U redu"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "normal": "Normalno",
+                            "silent": "Tiho"
+                        }
+                    }
+                }
+            },
+            "roller_shade": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "U redu"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "performance": "Performanse",
+                            "quiet": "Tiho"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "U redu"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automatski",
+                            "level_1": "Novo 1",
+                            "level_2": "Novo 2",
+                            "level_3": "Novo 3",
+                            "pet": "Ljubimac",
+                            "sleep": "Tihi rad"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "U redu"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Beba",
+                            "natural": "Prirodan",
+                            "normal": "Normalno",
+                            "sleep": "Tihi rad"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Beba",
+                            "custom_natural": "Prilago\u0111eni prirodni",
+                            "natural": "Prirodan",
+                            "normal": "Normalno",
+                            "sleep": "Tihi rad"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Automatski",
+                            "drying_filter": "Filter za su\u0161enje",
+                            "high": "Visok",
+                            "low": "Nizak",
+                            "medium": "Srednji",
+                            "quiet": "Tiho",
+                            "sleep": "Tihi rad",
+                            "target_humidity": "Ciljna vla\u017enost"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "U redu"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "Svetlo"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "Alarm",
+                            "autumn": "Jesen",
+                            "breathing": "Disanje",
+                            "cherry_blossom": "Tre\u0161njin cvet",
+                            "christmas": "Bo\u017ei\u0107",
+                            "colorful": "Raznobojno",
+                            "cool": "Hladno",
+                            "dream": "San",
+                            "dynamic": "Dinami\u010dki",
+                            "energy": "Energija",
+                            "fade": "I\u0161\u010dezavanje",
+                            "fireworks": "Vatromet",
+                            "flashing": "Treperenje",
+                            "flickering": "Treperenje",
+                            "flow": "Tok",
+                            "forest": "\u0160uma",
+                            "game": "Igra",
+                            "halloween": "No\u0107 ve\u0161tica",
+                            "heartbeat": "Otkucaj srca",
+                            "lightning": "Grmljavina",
+                            "meditation": "Meditacija",
+                            "modern": "Moderan",
+                            "movie": "Film",
+                            "mystery": "Misterija",
+                            "new_year": "Nova godina",
+                            "ocean": "Okean",
+                            "party": "\u017durka",
+                            "rainbow": "Duga",
+                            "relax": "Opu\u0161teno",
+                            "rock": "Rok",
+                            "romance": "Romansa",
+                            "rose": "Ru\u017ei\u010dasta",
+                            "sleep": "Re\u017eim za spavanje",
+                            "smooth": "Glatko",
+                            "starlight": "Svetlost zvezda",
+                            "starlit_sky": "Zvezdano nebo",
+                            "strobe": "Stroboskop",
+                            "sunrise": "Izlazak Sunca",
+                            "sunset": "Zalazak Sunca",
+                            "valentine_day": "Dan zaljubljenih",
+                            "vitality": "Vitalnost",
+                            "waves": "Talasi"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "U redu"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "display_time_offset": {
+                "name": "Odstupanje vremena prikaza"
+            },
+            "horizontal_oscillation_angle": {
+                "name": "Ugao horizontalnog pomeranja"
+            },
+            "vertical_oscillation_angle": {
+                "name": "Ugao vertikalnog pomeranja"
+            }
+        },
+        "select": {
+            "night_light": {
+                "name": "No\u0107no svetlo",
+                "state": {
+                    "bright": "Jarko",
+                    "off": "Isklju\u010deno",
+                    "soft": "Blago"
+                }
+            },
+            "time_format": {
+                "name": "Format vremena",
+                "state": {
+                    "12h": "12\u2011\u010dasovni (AM/PM)",
+                    "24h": "24\u2011\u010dasovni"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "Nivo kvaliteta vazduha",
+                "state": {
+                    "excellent": "Odli\u010dan",
+                    "good": "Dobar",
+                    "moderate": "Umeren",
+                    "unhealthy": "Nezdravo"
+                }
+            },
+            "battery_range": {
+                "name": "Domet baterije",
+                "state": {
+                    "critical": "Kriti\u010dan",
+                    "high": "Visok",
+                    "low": "Nizak",
+                    "medium": "Srednji"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Bluetooth signal"
+            },
+            "light_level": {
+                "name": "Nivo osvetljenja"
+            },
+            "pir_triggered_level": {
+                "name": "Nivo aktivacije senzora pokreta"
+            },
+            "radar_triggered_distance": {
+                "name": "Udaljenost aktivacije radara"
+            },
+            "radar_triggered_level": {
+                "name": "Nivo aktivacije radara"
+            },
+            "water_level": {
+                "name": "Nivo vode",
+                "state": {
+                    "empty": "Prazno",
+                    "high": "Visok",
+                    "low": "Nizak",
+                    "medium": "Srednji"
+                }
+            },
+            "wifi_signal": {
+                "name": "Wi-Fi signal"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "U redu"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "false": "Trenutno",
+                            "true": "Povuci/Uvuci"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "De\u010dija za\u0161tita"
+            },
+            "horizontal_oscillation": {
+                "name": "Horizontalna oscilacija"
+            },
+            "vertical_oscillation": {
+                "name": "Vertikalna oscilacija"
+            },
+            "wireless_charging": {
+                "name": "Be\u017ei\u010dno punjenje"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problem",
+                            "true": "U redu"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "advertising_state_error": {
+            "message": "{address} nije u stanju ogla\u0161avanja"
+        },
+        "device_not_found_error": {
+            "message": "Nije mogu\u0107e prona\u0107i Switchbot {sensor_type} sa adresom {address}: {reason}"
+        },
+        "device_without_config_entry": {
+            "message": "ID ure\u0111aja {device_id} nije povezan sa konfiguracionim unosom."
+        },
+        "not_keypad_vision_device": {
+            "message": "Ova usluga je podr\u017eana samo za SwitchBot Vision ure\u0111aje sa tastaturom."
+        },
+        "operation_error": {
+            "message": "Do\u0161lo je do gre\u0161ke prilikom izvr\u0161avanja radnje: {error}"
+        },
+        "set_fan_state_failed": {
+            "message": "Slanje komande ventilatoru nije uspelo."
+        },
+        "value_error": {
+            "message": "Inicijalizacija SwitchBot ure\u0111aja nije uspela zbog neta\u010dnih parametara konfiguracije: {error}"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "curtain_speed": "Brzina pomeranja zavese",
+                    "lock_force_nightlatch": "Forsiraj re\u017eim rada Nightlatch-a",
+                    "retry_count": "Broj ponovnih poku\u0161aja"
+                },
+                "data_description": {
+                    "curtain_speed": "Brzina otvaranja i zatvaranja zavese (1\u2011255, gde je 1 najsporije, a 255 najbr\u017ee)",
+                    "lock_force_nightlatch": "Primoraj re\u017eim rada no\u0107ne zasunice \u010dak i ako no\u0107na zasunica nije detektovana",
+                    "retry_count": "Koliko puta ponovo poku\u0161ati slanje komandi ka va\u0161im SwitchBot ure\u0111ajima"
+                }
+            }
+        }
+    },
+    "services": {
+        "add_password": {
+            "description": "Dodavanje lozinke na Vision ure\u0111aj sa tastaturom.",
+            "fields": {
+                "device_id": {
+                    "description": "Identifikator Vision ure\u0111aja sa tastaturom",
+                    "name": "ID ure\u0111aja"
+                },
+                "password": {
+                    "description": "Lozinka du\u017eine od 6 do 12 cifara",
+                    "name": "Lozinka"
+                }
+            },
+            "name": "Dodaj lozinku"
+        }
+    }
+}

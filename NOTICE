@@ -1,0 +1,17 @@
+SwitchBot Bluetooth with Blind Tilt calibration
+Copyright 2026 lyntoo
+
+This project is a modified copy of the "SwitchBot Bluetooth" integration of
+Home Assistant Core (https://github.com/home-assistant/core, directory
+homeassistant/components/switchbot), version 2026.10.1, licensed under the
+Apache License, Version 2.0. The original copyright and license terms are kept
+(see LICENSE). The files that were modified or added are listed in FORK.md and
+carry a notice at the top of each Python file. An unmodified copy of the
+original sources is kept in upstream-baseline/.
+
+It uses the PySwitchbot library (https://github.com/sblibs/pySwitchbot,
+MIT License) without modification.
+
+"SwitchBot" is a trademark of its owner. This project is unofficial and is not
+affiliated with, endorsed by or sponsored by SwitchBot or the Home Assistant
+project.

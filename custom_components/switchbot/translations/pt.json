@@ -1,0 +1,507 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Dispositivo j\u00e1 configurado",
+            "api_error": "Erro ao comunicar com a API SwitchBot: {error_detail}",
+            "no_devices_found": "Nenhum dispositivo SwitchBot suportado encontrado no alcance; Se o dispositivo estiver no alcance, certifique-se de que o scanner tem a digitaliza\u00e7\u00e3o ativa ativada, pois os dispositivos SwitchBot n\u00e3o podem ser descobertos com digitaliza\u00e7\u00f5es passivas. As digitaliza\u00e7\u00f5es ativas podem ser desativadas uma vez que o dispositivo esteja configurado. Se precisar de esclarecimentos sobre se o dispositivo est\u00e1 no alcance, descarregue os diagn\u00f3sticos para a integra\u00e7\u00e3o que fornece o seu adaptador Bluetooth ou proxy e verifique se o endere\u00e7o MAC do dispositivo SwitchBot est\u00e1 presente.",
+            "switchbot_unsupported_type": "Tipo de SwitchBot n\u00e3o suportado.",
+            "unknown": "Erro inesperado"
+        },
+        "error": {
+            "auth_failed": "Falha na autentica\u00e7\u00e3o: {error_detail}",
+            "encryption_key_invalid": "A ID da chave ou a chave criptogr\u00e1fica \u00e9 inv\u00e1lida",
+            "unknown": "Erro inesperado"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Palavra-passe",
+                    "username": "Nome de Utilizador"
+                },
+                "data_description": {
+                    "password": "A palavra-passe da sua conta SwitchBot.",
+                    "username": "O nome de utilizador da sua conta SwitchBot"
+                },
+                "description": "Forne\u00e7a o seu nome de utilizador e palavra-passe da aplica\u00e7\u00e3o SwitchBot. Esses dados n\u00e3o ser\u00e3o salvos e s\u00e3o usados apenas para recuperar informa\u00e7\u00f5es do modelo do dispositivo para automatizar a descoberta. Os nomes de utilizador e as palavras-passe s\u00e3o sens\u00edveis ao caso."
+            },
+            "confirm": {
+                "description": "Pretende configurar {name}?"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "Palavra-passe",
+                    "username": "Nome de Utilizador"
+                },
+                "data_description": {
+                    "password": "A palavra-passe da sua conta SwitchBot.",
+                    "username": "O nome de utilizador da sua conta SwitchBot"
+                },
+                "description": "Por favor, forne\u00e7a o nome de utilizador e a palavra-passe da sua aplica\u00e7\u00e3o SwitchBot. Estes dados n\u00e3o ser\u00e3o guardados e ser\u00e3o usados apenas para recuperar a chave de encripta\u00e7\u00e3o do seu dispositivo. Os nomes de utilizador e as palavras-passe s\u00e3o sens\u00edveis a mai\u00fasculas e min\u00fasculas."
+            },
+            "encrypted_choose_method": {
+                "description": "Um dispositivo SwitchBot encriptado pode ser configurado no Home Assistant de duas maneiras.\n\nPode introduzir o ID da chave e a chave criptogr\u00e1fica manualmente, ou o  Home Assistant pode import\u00e1-las da sua conta SwitchBot.",
+                "menu_options": {
+                    "encrypted_auth": "Conta Switchbot (recomendado)",
+                    "encrypted_key": "Introduzir a chave de encripta\u00e7\u00e3o manualmente"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "Chave de encripta\u00e7\u00e3o",
+                    "key_id": "ID da chave"
+                },
+                "data_description": {
+                    "encryption_key": "A chave criptogr\u00e1fica do dispositivo",
+                    "key_id": "O ID da chave criptogr\u00e1fica"
+                },
+                "description": "O dispositivo {name} requer uma chave de encripta\u00e7\u00e3o. Detalhes sobre como obt\u00ea-la podem ser encontrados na documenta\u00e7\u00e3o."
+            },
+            "password": {
+                "data": {
+                    "password": "Palavra-passe"
+                },
+                "data_description": {
+                    "password": "A palavra-passe necess\u00e1ria para o acesso ao dispositivo Bot"
+                },
+                "description": "O dispositivo {name} requer uma palavra-passe"
+            },
+            "select_device": {
+                "data": {
+                    "address": "Endere\u00e7o MAC"
+                },
+                "data_description": {
+                    "address": "O endere\u00e7o MAC Bluetooth do seu dispositivo SwitchBot"
+                }
+            },
+            "user": {
+                "description": "Um ou mais de seus adaptadores Bluetooth est\u00e3o a usar varredura passiva, que pode n\u00e3o descobrir todos os dispositivos SwitchBot. Gostaria de iniciar sess\u00e3o na sua conta SwitchBot para transferir informa\u00e7\u00f5es de dispositivos e automatizar a descoberta? Se n\u00e3o tiver certeza, recomendamos iniciar sess\u00e3o.",
+                "menu_options": {
+                    "cloud_login": "Iniciar sess\u00e3o na conta SwitchBot",
+                    "select_device": "Continuar sem iniciar sess\u00e3o"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Calibra\u00e7\u00e3o"
+            },
+            "door_auto_lock_paused": {
+                "name": "Bloqueio autom\u00e1tico em pausa"
+            },
+            "door_timeout": {
+                "name": "Tempo limite"
+            },
+            "door_unclosed_alarm": {
+                "name": "Alarme n\u00e3o fechado"
+            },
+            "door_unlocked_alarm": {
+                "name": "Alarme desbloqueado"
+            },
+            "duress_alarm": {
+                "name": "Alarme de emerg\u00eancia"
+            },
+            "half_lock_calibration": {
+                "name": "Calibra\u00e7\u00e3o de meia tranca"
+            },
+            "half_locked": {
+                "name": "Meio trancado"
+            },
+            "high_temperature": {
+                "name": "Alta temperatura"
+            },
+            "lockout_alarm": {
+                "name": "Alarme de bloqueio"
+            },
+            "low_temperature": {
+                "name": "Temperatura baixa"
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "Meia tranca"
+            },
+            "light_sensor": {
+                "name": "Sensor de luz"
+            },
+            "next_image": {
+                "name": "Pr\u00f3xima imagem"
+            },
+            "previous_image": {
+                "name": "Imagem anterior"
+            },
+            "sync_datetime": {
+                "name": "Sincronizar data e hora"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "Manual",
+                            "off": "Desligado",
+                            "schedule": "Agendar"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "OK"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "normal": "Normal",
+                            "silent": "Silencioso"
+                        }
+                    }
+                }
+            },
+            "roller_shade": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "OK"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "performance": "Desempenho",
+                            "quiet": "Silencioso"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "level_1": "N\u00edvel 1",
+                            "level_2": "N\u00edvel 2",
+                            "level_3": "N\u00edvel 3",
+                            "pet": "Animal de estima\u00e7\u00e3o",
+                            "sleep": "Dormir"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Beb\u00e9",
+                            "natural": "Natural",
+                            "normal": "Normal",
+                            "sleep": "Dormir"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Beb\u00e9",
+                            "custom_natural": "Natural personalizado",
+                            "natural": "Natural",
+                            "normal": "Normal",
+                            "sleep": "Dormir"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "drying_filter": "Filtro de secagem",
+                            "high": "Alto",
+                            "low": "Baixo",
+                            "medium": "M\u00e9dio",
+                            "quiet": "Silencioso",
+                            "sleep": "Dormir",
+                            "target_humidity": "Humidade alvo"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "Luz"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "Alarme",
+                            "autumn": "Outono",
+                            "breathing": "Respira\u00e7\u00e3o",
+                            "cherry_blossom": "Flor de cerejeira",
+                            "christmas": "Natal",
+                            "colorful": "Colorido",
+                            "cool": "Arrefecer",
+                            "dream": "Sonho",
+                            "dynamic": "Din\u00e2mico",
+                            "energy": "Energia",
+                            "fade": "Desvanecer",
+                            "fireworks": "Fogo de artif\u00edcio",
+                            "flashing": "Intermitente",
+                            "flickering": "Cintila\u00e7\u00e3o",
+                            "flow": "Fluxo",
+                            "forest": "Floresta",
+                            "game": "Jogo",
+                            "halloween": "Dia das Bruxas",
+                            "heartbeat": "Batimento card\u00edaco",
+                            "lightning": "Rel\u00e2mpago",
+                            "meditation": "Medita\u00e7\u00e3o",
+                            "modern": "Moderno",
+                            "movie": "Filme",
+                            "mystery": "Mist\u00e9rio",
+                            "new_year": "Ano Novo",
+                            "ocean": "Oceano",
+                            "party": "Festa",
+                            "rainbow": "Arco-\u00edris",
+                            "relax": "Relaxar",
+                            "rock": "Rock",
+                            "romance": "Romance",
+                            "rose": "Rosa",
+                            "sleep": "Dormir",
+                            "smooth": "Suave",
+                            "starlight": "Luz das estrelas",
+                            "starlit_sky": "C\u00e9u estrelado",
+                            "strobe": "Estrobosc\u00f3pio",
+                            "sunrise": "Nascer do sol",
+                            "sunset": "P\u00f4r do sol",
+                            "valentine_day": "Dia dos Namorados",
+                            "vitality": "Vitalidade",
+                            "waves": "Ondas"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "display_time_offset": {
+                "name": "Desvio da hora de visualiza\u00e7\u00e3o"
+            },
+            "horizontal_oscillation_angle": {
+                "name": "\u00c2ngulo de oscila\u00e7\u00e3o horizontal"
+            },
+            "vertical_oscillation_angle": {
+                "name": "\u00c2ngulo de oscila\u00e7\u00e3o vertical"
+            }
+        },
+        "select": {
+            "night_light": {
+                "name": "Luz noturna",
+                "state": {
+                    "bright": "Brilho",
+                    "off": "Desligado",
+                    "soft": "Suave"
+                }
+            },
+            "time_format": {
+                "name": "Formato da hora",
+                "state": {
+                    "12h": "12 horas (AM/PM)",
+                    "24h": "24 horas"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "N\u00edvel de qualidade do ar",
+                "state": {
+                    "excellent": "Excelente",
+                    "good": "Boa",
+                    "moderate": "Moderado",
+                    "unhealthy": "Insalubre"
+                }
+            },
+            "battery_range": {
+                "name": "Autonomia da bateria",
+                "state": {
+                    "critical": "Cr\u00edtico",
+                    "high": "Alto",
+                    "low": "Baixo",
+                    "medium": "M\u00e9dio"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Sinal Bluetooth"
+            },
+            "light_level": {
+                "name": "N\u00edvel de luz"
+            },
+            "pir_triggered_level": {
+                "name": "N\u00edvel de ativa\u00e7\u00e3o do PIR"
+            },
+            "radar_triggered_distance": {
+                "name": "Dist\u00e2ncia detetada pelo radar"
+            },
+            "radar_triggered_level": {
+                "name": "N\u00edvel acionado por radar"
+            },
+            "water_level": {
+                "name": "N\u00edvel da \u00e1gua",
+                "state": {
+                    "empty": "Vazio",
+                    "high": "Alto",
+                    "low": "Baixo",
+                    "medium": "M\u00e9dio"
+                }
+            },
+            "wifi_signal": {
+                "name": "Sinal Wi-Fi"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "OK"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "false": "Moment\u00e2neo",
+                            "true": "Puxar/Retrair"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "Bloqueio infantil"
+            },
+            "horizontal_oscillation": {
+                "name": "Oscila\u00e7\u00e3o horizontal"
+            },
+            "vertical_oscillation": {
+                "name": "Oscila\u00e7\u00e3o vertical"
+            },
+            "wireless_charging": {
+                "name": "Carregamento sem fios"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Problema",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "advertising_state_error": {
+            "message": "{address} n\u00e3o \u00e9 um estado publicit\u00e1rio"
+        },
+        "device_not_found_error": {
+            "message": "N\u00e3o foi poss\u00edvel encontrar o Switchbot {sensor_type} com o endere\u00e7o {address}: {reason}"
+        },
+        "device_without_config_entry": {
+            "message": "O ID de dispositivo {device_id} n\u00e3o est\u00e1 associado a uma entrada de configura\u00e7\u00e3o."
+        },
+        "not_keypad_vision_device": {
+            "message": "Este servi\u00e7o s\u00f3 \u00e9 suportado para dispositivos SwitchBot Keypad Vision."
+        },
+        "operation_error": {
+            "message": "Ocorreu um erro ao executar a a\u00e7\u00e3o: {error}"
+        },
+        "set_fan_state_failed": {
+            "message": "N\u00e3o foi poss\u00edvel enviar o comando para a ventoinha."
+        },
+        "value_error": {
+            "message": "A inicializa\u00e7\u00e3o do dispositivo Switchbot falhou devido a par\u00e2metros de configura\u00e7\u00e3o incorretos: {error}"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "curtain_speed": "Velocidade de desloca\u00e7\u00e3o da cortina",
+                    "lock_force_nightlatch": "For\u00e7ar o modo de opera\u00e7\u00e3o Nightlatch",
+                    "retry_count": "Contagem de tentativas"
+                },
+                "data_description": {
+                    "curtain_speed": "Velocidade das opera\u00e7\u00f5es de abertura e fecho da cortina (1-255, sendo 1 a mais lenta e 255 a mais r\u00e1pida)",
+                    "lock_force_nightlatch": "For\u00e7ar o modo de funcionamento do fecho noturno mesmo que este n\u00e3o seja detetado",
+                    "retry_count": "Quantas vezes repetir o envio de comandos para os seus dispositivos SwitchBot"
+                }
+            }
+        }
+    },
+    "services": {
+        "add_password": {
+            "description": "Adicionar uma palavra-passe ao dispositivo de vis\u00e3o do teclado.",
+            "fields": {
+                "device_id": {
+                    "description": "O ID de dispositivo do dispositivo de vis\u00e3o do teclado",
+                    "name": "ID do dispositivo"
+                },
+                "password": {
+                    "description": "Uma palavra-passe de 6 a 12 d\u00edgitos",
+                    "name": "Palavra-passe"
+                }
+            },
+            "name": "Adicionar palavra-passe"
+        }
+    }
+}

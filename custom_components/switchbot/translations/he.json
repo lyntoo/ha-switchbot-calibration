@@ -1,0 +1,217 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "\u05ea\u05e6\u05d5\u05e8\u05ea \u05d4\u05d4\u05ea\u05e7\u05df \u05db\u05d1\u05e8 \u05e0\u05e7\u05d1\u05e2\u05d4",
+            "no_devices_found": "\u05dc\u05d0 \u05e0\u05de\u05e6\u05d0\u05d5 \u05d4\u05ea\u05e7\u05e0\u05d9 SwitchBot \u05e0\u05ea\u05de\u05db\u05d9\u05dd \u05d1\u05d8\u05d5\u05d5\u05d7; \u05d0\u05dd \u05d4\u05de\u05db\u05e9\u05d9\u05e8 \u05e0\u05de\u05e6\u05d0 \u05d1\u05d8\u05d5\u05d5\u05d7, \u05d9\u05e9 \u05dc\u05d5\u05d5\u05d3\u05d0 \u05e9\u05d4\u05e1\u05d5\u05e8\u05e7 \u05de\u05e4\u05e2\u05d9\u05dc \u05e1\u05e8\u05d9\u05e7\u05d4 \u05e4\u05e2\u05d9\u05dc\u05d4, \u05de\u05db\u05d9\u05d5\u05d5\u05df \u05e9\u05dc\u05d0 \u05e0\u05d9\u05ea\u05df \u05dc\u05d2\u05dc\u05d5\u05ea \u05de\u05db\u05e9\u05d9\u05e8\u05d9 SwitchBot \u05d1\u05d0\u05de\u05e6\u05e2\u05d5\u05ea \u05e1\u05e8\u05d9\u05e7\u05d5\u05ea \u05e4\u05e1\u05d9\u05d1\u05d9\u05d5\u05ea. \u05e0\u05d9\u05ea\u05df \u05dc\u05d4\u05e9\u05d1\u05d9\u05ea \u05e1\u05e8\u05d9\u05e7\u05d5\u05ea \u05e4\u05e2\u05d9\u05dc\u05d5\u05ea \u05dc\u05d0\u05d7\u05e8 \u05e7\u05d1\u05d9\u05e2\u05ea \u05d4\u05ea\u05e6\u05d5\u05e8\u05d4 \u05e9\u05dc \u05d4\u05de\u05db\u05e9\u05d9\u05e8. \u05db\u05d0\u05e9\u05e8 \u05d6\u05e7\u05d5\u05e7\u05d9\u05dd \u05dc\u05d4\u05d1\u05d4\u05e8\u05d4 \u05d0\u05dd \u05d4\u05de\u05db\u05e9\u05d9\u05e8 \u05e0\u05de\u05e6\u05d0 \u05d1\u05d8\u05d5\u05d5\u05d7, \u05d9\u05e9 \u05dc\u05d4\u05d5\u05e8\u05d9\u05d3 \u05d0\u05ea \u05d4\u05d0\u05d1\u05d7\u05d5\u05df \u05e2\u05d1\u05d5\u05e8 \u05d4\u05e9\u05d9\u05dc\u05d5\u05d1 \u05d4\u05de\u05e1\u05e4\u05e7 \u05d0\u05ea \u05de\u05ea\u05d0\u05dd Bluetooth \u05d0\u05d5 \u05d4-Proxy \u05e9\u05dc\u05da \u05d5\u05dc\u05d1\u05d3\u05d5\u05e7 \u05d0\u05dd \u05db\u05ea\u05d5\u05d1\u05ea \u05d4-MAC \u05e9\u05dc \u05de\u05db\u05e9\u05d9\u05e8 SwitchBot \u05e7\u05d9\u05d9\u05de\u05ea.",
+            "unknown": "\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05dc\u05ea\u05d9 \u05e6\u05e4\u05d5\u05d9\u05d4"
+        },
+        "error": {
+            "unknown": "\u05e9\u05d2\u05d9\u05d0\u05d4 \u05d1\u05dc\u05ea\u05d9 \u05e6\u05e4\u05d5\u05d9\u05d4"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "\u05e1\u05d9\u05e1\u05de\u05d4",
+                    "username": "\u05e9\u05dd \u05de\u05e9\u05ea\u05de\u05e9"
+                }
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "\u05e1\u05d9\u05e1\u05de\u05d4",
+                    "username": "\u05e9\u05dd \u05de\u05e9\u05ea\u05de\u05e9"
+                }
+            },
+            "password": {
+                "data": {
+                    "password": "\u05e1\u05d9\u05e1\u05de\u05d4"
+                }
+            }
+        }
+    },
+    "entity": {
+        "button": {
+            "next_image": {
+                "name": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05d1\u05d0\u05d4"
+            },
+            "previous_image": {
+                "name": "\u05d4\u05ea\u05de\u05d5\u05e0\u05d4 \u05d4\u05e7\u05d5\u05d3\u05de\u05ea"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "\u05d9\u05d3\u05e0\u05d9",
+                            "off": "\u05db\u05d1\u05d5\u05d9",
+                            "schedule": "\u05dc\u05d5\u05d7 \u05d6\u05de\u05e0\u05d9\u05dd"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u05d1\u05e2\u05d9\u05d4",
+                            "true": "\u05ea\u05e7\u05d9\u05df"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u05d1\u05e2\u05d9\u05d4",
+                            "true": "\u05ea\u05e7\u05d9\u05df"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "\u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9",
+                            "level_1": "\u05e8\u05de\u05d4 1",
+                            "level_2": "\u05e8\u05de\u05d4 2",
+                            "level_3": "\u05e8\u05de\u05d4 3"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u05d1\u05e2\u05d9\u05d4",
+                            "true": "\u05ea\u05e7\u05d9\u05df"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "normal": "\u05e8\u05d2\u05d9\u05dc"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "normal": "\u05e8\u05d2\u05d9\u05dc"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "\u05d0\u05d5\u05d8\u05d5\u05de\u05d8\u05d9",
+                            "high": "\u05d2\u05d1\u05d5\u05d4",
+                            "low": "\u05e0\u05de\u05d5\u05da",
+                            "medium": "\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9",
+                            "sleep": "\u05e9\u05d9\u05e0\u05d4"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u05d1\u05e2\u05d9\u05d4",
+                            "true": "\u05ea\u05e7\u05d9\u05df"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "fireworks": "\u05d6\u05d9\u05e7\u05d5\u05e7\u05d9\u05dd",
+                            "sunset": "\u05e9\u05e7\u05d9\u05e2\u05d4"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u05d1\u05e2\u05d9\u05d4",
+                            "true": "\u05ea\u05e7\u05d9\u05df"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "night_light": {
+                "state": {
+                    "off": "\u05db\u05d1\u05d5\u05d9"
+                }
+            }
+        },
+        "sensor": {
+            "battery_range": {
+                "state": {
+                    "high": "\u05d2\u05d1\u05d5\u05d4",
+                    "low": "\u05e0\u05de\u05d5\u05da",
+                    "medium": "\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9"
+                }
+            },
+            "water_level": {
+                "state": {
+                    "empty": "\u05e8\u05d9\u05e7",
+                    "high": "\u05d2\u05d1\u05d5\u05d4",
+                    "low": "\u05e0\u05de\u05d5\u05da",
+                    "medium": "\u05d1\u05d9\u05e0\u05d5\u05e0\u05d9"
+                }
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u05d1\u05e2\u05d9\u05d4",
+                            "true": "\u05ea\u05e7\u05d9\u05df"
+                        }
+                    }
+                }
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "\u05d1\u05e2\u05d9\u05d4",
+                            "true": "\u05ea\u05e7\u05d9\u05df"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "retry_count": "\u05e1\u05e4\u05d9\u05e8\u05ea \u05e0\u05e1\u05d9\u05d5\u05e0\u05d5\u05ea \u05d7\u05d5\u05d6\u05e8\u05d9\u05dd"
+                }
+            }
+        }
+    }
+}

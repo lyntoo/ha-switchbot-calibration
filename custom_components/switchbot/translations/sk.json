@@ -1,0 +1,507 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Zariadenie u\u017e je nakonfigurovan\u00e9",
+            "api_error": "Chyba pri komunik\u00e1cii s rozhran\u00edm SwitchBot API: {error_detail}",
+            "no_devices_found": "V dosahu sa nena\u0161li \u017eiadne podporovan\u00e9 zariadenia SwitchBot; Ak je zariadenie v dosahu, uistite sa, \u017ee skener m\u00e1 povolen\u00e9 akt\u00edvne skenovanie, preto\u017ee zariadenia SwitchBot nie je mo\u017en\u00e9 zisti\u0165 pomocou pas\u00edvneho skenovania. Akt\u00edvne skenovanie je mo\u017en\u00e9 vypn\u00fa\u0165, ke\u010f je zariadenie nakonfigurovan\u00e9. Ak potrebujete objasni\u0165, \u010di je zariadenie v dosahu, stiahnite si diagnostiku pre integr\u00e1ciu, ktor\u00e1 poskytuje v\u00e1\u0161 adapt\u00e9r Bluetooth alebo proxy server, a skontrolujte, \u010di je pr\u00edtomn\u00e1 adresa MAC zariadenia SwitchBot.",
+            "switchbot_unsupported_type": "Nepodporovan\u00fd typ SwitchBot.",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "error": {
+            "auth_failed": "Overenie zlyhalo: {error_detail}",
+            "encryption_key_invalid": "ID k\u013e\u00fa\u010da alebo \u0161ifrovac\u00ed k\u013e\u00fa\u010d je neplatn\u00fd",
+            "unknown": "Neo\u010dak\u00e1van\u00e1 chyba"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "data_description": {
+                    "password": "Heslo v\u00e1\u0161ho \u00fa\u010dtu SwitchBot",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno v\u00e1\u0161ho \u00fa\u010dtu SwitchBot"
+                },
+                "description": "Zadajte svoje pou\u017e\u00edvate\u013esk\u00e9 meno a heslo do aplik\u00e1cie SwitchBot. Tieto \u00fadaje sa neukladaj\u00fa a pou\u017e\u00edvaj\u00fa sa len na z\u00edskanie inform\u00e1ci\u00ed o modeli zariadenia na automatiz\u00e1ciu zis\u0165ovania. Pri pou\u017e\u00edvate\u013esk\u00fdch men\u00e1ch a hesl\u00e1ch sa rozli\u0161uj\u00fa ve\u013ek\u00e9 a mal\u00e9 p\u00edsmen\u00e1."
+            },
+            "confirm": {
+                "description": "Chcete nastavi\u0165 {name}?"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "Heslo",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno"
+                },
+                "data_description": {
+                    "password": "Heslo v\u00e1\u0161ho \u00fa\u010dtu SwitchBot",
+                    "username": "Pou\u017e\u00edvate\u013esk\u00e9 meno v\u00e1\u0161ho \u00fa\u010dtu SwitchBot"
+                },
+                "description": "Zadajte svoje pou\u017e\u00edvate\u013esk\u00e9 meno a heslo do aplik\u00e1cie SwitchBot. Tieto \u00fadaje sa neulo\u017eia a pou\u017eij\u00fa sa len na na\u010d\u00edtanie \u0161ifrovacieho k\u013e\u00fa\u010da v\u00e1\u0161ho zariadenia. Pri pou\u017e\u00edvate\u013esk\u00fdch men\u00e1ch a hesl\u00e1ch sa rozli\u0161uj\u00fa mal\u00e9 a ve\u013ek\u00e9 p\u00edsmen\u00e1."
+            },
+            "encrypted_choose_method": {
+                "description": "\u0160ifrovan\u00e9 zariadenie SwitchBot mo\u017eno v Home Assistant nastavi\u0165 dvoma r\u00f4znymi sp\u00f4sobmi.\n\nID k\u013e\u00fa\u010da a \u0161ifrovac\u00ed k\u013e\u00fa\u010d m\u00f4\u017eete zada\u0165 sami alebo ich Home Assistant m\u00f4\u017ee importova\u0165 z v\u00e1\u0161ho \u00fa\u010dtu SwitchBot.",
+                "menu_options": {
+                    "encrypted_auth": "\u00da\u010det SwitchBot (odpor\u00fa\u010dan\u00e9)",
+                    "encrypted_key": "Zadajte \u0161ifrovac\u00ed k\u013e\u00fa\u010d ru\u010dne"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "\u0160ifrovac\u00ed k\u013e\u00fa\u010d",
+                    "key_id": "ID k\u013e\u00fa\u010da"
+                },
+                "data_description": {
+                    "encryption_key": "\u0160ifrovac\u00ed k\u013e\u00fa\u010d pre zariadenie",
+                    "key_id": "ID \u0161ifrovacieho k\u013e\u00fa\u010da"
+                },
+                "description": "Zariadenie {name} vy\u017eaduje \u0161ifrovac\u00ed k\u013e\u00fa\u010d, podrobnosti o tom, ako ho z\u00edska\u0165, n\u00e1jdete v dokument\u00e1cii."
+            },
+            "password": {
+                "data": {
+                    "password": "Heslo"
+                },
+                "data_description": {
+                    "password": "Heslo potrebn\u00e9 na pr\u00edstup k zariadeniu Bot"
+                },
+                "description": "Zariadenie {name} vy\u017eaduje heslo"
+            },
+            "select_device": {
+                "data": {
+                    "address": "MAC adresa"
+                },
+                "data_description": {
+                    "address": "MAC adresa Bluetooth v\u00e1\u0161ho zariadenia SwitchBot"
+                }
+            },
+            "user": {
+                "description": "Jeden alebo viacero va\u0161ich adapt\u00e9rov Bluetooth pou\u017e\u00edva pas\u00edvne skenovanie, ktor\u00e9 nemus\u00ed odhali\u0165 v\u0161etky zariadenia SwitchBot. Chcete sa prihl\u00e1si\u0165 do svojho \u00fa\u010dtu SwitchBot, aby ste mohli prevzia\u0165 inform\u00e1cie o zariaden\u00ed a automatizova\u0165 zis\u0165ovanie? Ak si nie ste ist\u00ed, odpor\u00fa\u010dame prihl\u00e1si\u0165 sa.",
+                "menu_options": {
+                    "cloud_login": "Prihl\u00e1ste sa do \u00fa\u010dtu SwitchBot",
+                    "select_device": "Pokra\u010dova\u0165 bez prihl\u00e1senia"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Kalibr\u00e1cia"
+            },
+            "door_auto_lock_paused": {
+                "name": "Automatick\u00e9 uzamknutie je pozastaven\u00e9"
+            },
+            "door_timeout": {
+                "name": "\u010casov\u00fd limit"
+            },
+            "door_unclosed_alarm": {
+                "name": "Neuzavret\u00fd alarm"
+            },
+            "door_unlocked_alarm": {
+                "name": "Odomknut\u00fd alarm"
+            },
+            "duress_alarm": {
+                "name": "Poplach v pr\u00edpade n\u00fadze"
+            },
+            "half_lock_calibration": {
+                "name": "Poloz\u00e1mkov\u00e1 kalibr\u00e1cia"
+            },
+            "half_locked": {
+                "name": "Polovi\u010dne zamknut\u00e9"
+            },
+            "high_temperature": {
+                "name": "Vysok\u00e1 teplota"
+            },
+            "lockout_alarm": {
+                "name": "Alarm pri uzamknut\u00ed"
+            },
+            "low_temperature": {
+                "name": "N\u00edzka teplota"
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "Polovi\u010dn\u00fd z\u00e1mok"
+            },
+            "light_sensor": {
+                "name": "Sveteln\u00fd sn\u00edma\u010d"
+            },
+            "next_image": {
+                "name": "\u010eal\u0161\u00ed obr\u00e1zok"
+            },
+            "previous_image": {
+                "name": "Predch\u00e1dzaj\u00faci obr\u00e1zok"
+            },
+            "sync_datetime": {
+                "name": "Synchroniz\u00e1cia d\u00e1tumu a \u010dasu"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "Manu\u00e1lne",
+                            "off": "Neakt\u00edvny",
+                            "schedule": "Pl\u00e1novanie"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e9m",
+                            "true": "OK"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "normal": "Norm\u00e1lny",
+                            "silent": "Tich\u00fd"
+                        }
+                    }
+                }
+            },
+            "roller_shade": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e9m",
+                            "true": "OK"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "performance": "V\u00fdkon",
+                            "quiet": "Tich\u00fd"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e9m",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "level_1": "\u00darove\u0148 1",
+                            "level_2": "\u00darove\u0148 2",
+                            "level_3": "\u00darove\u0148 3",
+                            "pet": "Dom\u00e1ce zviera",
+                            "sleep": "Sp\u00e1nok"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e9m",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Die\u0165a",
+                            "natural": "Pr\u00edrodn\u00e9",
+                            "normal": "Norm\u00e1lne",
+                            "sleep": "Sp\u00e1nok"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Die\u0165a",
+                            "custom_natural": "Na mieru, pr\u00edrodn\u00fd",
+                            "natural": "Pr\u00edrodn\u00e9",
+                            "normal": "Norm\u00e1lne",
+                            "sleep": "Sp\u00e1nok"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Auto",
+                            "drying_filter": "Su\u0161iaci filter",
+                            "high": "Vysok\u00e1",
+                            "low": "N\u00edzka",
+                            "medium": "Stredn\u00e1",
+                            "quiet": "Tich\u00fd",
+                            "sleep": "Sp\u00e1nok",
+                            "target_humidity": "Cie\u013eov\u00e1 vlhkos\u0165"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e9m",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "Svetlo"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "Bud\u00edk",
+                            "autumn": "Jese\u0148",
+                            "breathing": "D\u00fdchanie",
+                            "cherry_blossom": "\u010cere\u0161\u0148ov\u00fd kvet",
+                            "christmas": "Vianoce",
+                            "colorful": "Farebn\u00fd",
+                            "cool": "V\u00fdborn\u00fd",
+                            "dream": "Sen",
+                            "dynamic": "Dynamick\u00fd",
+                            "energy": "Energia",
+                            "fade": "F\u00e1dny",
+                            "fireworks": "Oh\u0148ostroj",
+                            "flashing": "Blikaj\u00faci",
+                            "flickering": "Blikaj\u00face",
+                            "flow": "Te\u010denie",
+                            "forest": "Les",
+                            "game": "Hra",
+                            "halloween": "Halloween",
+                            "heartbeat": "Srdcov\u00fd tep",
+                            "lightning": "Blesky",
+                            "meditation": "Medit\u00e1cia",
+                            "modern": "Modern\u00fd",
+                            "movie": "Film",
+                            "mystery": "Z\u00e1hada",
+                            "new_year": "Nov\u00fd rok",
+                            "ocean": "Oce\u00e1n",
+                            "party": "P\u00e1rty",
+                            "rainbow": "D\u00faha",
+                            "relax": "Relax",
+                            "rock": "Skaln\u00fd",
+                            "romance": "Romantika",
+                            "rose": "Ru\u017ea",
+                            "sleep": "Sp\u00e1nok",
+                            "smooth": "Hladk\u00fd",
+                            "starlight": "Hviezdne svetlo",
+                            "starlit_sky": "Hviezdna obloha",
+                            "strobe": "Blesk",
+                            "sunrise": "V\u00fdchod slnka",
+                            "sunset": "Z\u00e1pad slnka",
+                            "valentine_day": "De\u0148 sv\u00e4t\u00e9ho Valent\u00edna",
+                            "vitality": "Vitalita",
+                            "waves": "Vlny"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e9m",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "display_time_offset": {
+                "name": "\u010casov\u00fd posun zobrazenia"
+            },
+            "horizontal_oscillation_angle": {
+                "name": "Uhol horizont\u00e1lneho kmitania"
+            },
+            "vertical_oscillation_angle": {
+                "name": "Uhol vertik\u00e1lneho kmitania"
+            }
+        },
+        "select": {
+            "night_light": {
+                "name": "No\u010dn\u00e9 svetlo",
+                "state": {
+                    "bright": "Svetl\u00fd",
+                    "off": "Neakt\u00edvny",
+                    "soft": "Jemn\u00e9"
+                }
+            },
+            "time_format": {
+                "name": "Form\u00e1t \u010dasu",
+                "state": {
+                    "12h": "12-hodinov\u00fd (AM/PM)",
+                    "24h": "24 hod\u00edn denne"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "\u00darove\u0148 kvality ovzdu\u0161ia",
+                "state": {
+                    "excellent": "Vynikaj\u00face",
+                    "good": "Dobr\u00e9",
+                    "moderate": "Mierne",
+                    "unhealthy": "Nezdrav\u00e9"
+                }
+            },
+            "battery_range": {
+                "name": "Rozsah bat\u00e9rie",
+                "state": {
+                    "critical": "Kritick\u00fd",
+                    "high": "Vysok\u00e1",
+                    "low": "N\u00edzka",
+                    "medium": "Stredn\u00e1"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Bluetooth sign\u00e1l"
+            },
+            "light_level": {
+                "name": "\u00darove\u0148 osvetlenia"
+            },
+            "pir_triggered_level": {
+                "name": "\u00darove\u0148 spustenia PIR"
+            },
+            "radar_triggered_distance": {
+                "name": "Vzdialenos\u0165 sp\u00fa\u0161\u0165an\u00e1 radarom"
+            },
+            "radar_triggered_level": {
+                "name": "Hladina aktivovan\u00e1 radarom"
+            },
+            "water_level": {
+                "name": "Hladina vody",
+                "state": {
+                    "empty": "Pr\u00e1zdny",
+                    "high": "Vysok\u00e1",
+                    "low": "N\u00edzka",
+                    "medium": "Stredn\u00e1"
+                }
+            },
+            "wifi_signal": {
+                "name": "Wifi sign\u00e1l"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e9m",
+                            "true": "OK"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "false": "Kr\u00e1tkodob\u00fd",
+                            "true": "\u0164ahanie/vy\u0165ahovanie"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "Detsk\u00fd z\u00e1mok"
+            },
+            "horizontal_oscillation": {
+                "name": "Horizont\u00e1lna oscil\u00e1cia"
+            },
+            "vertical_oscillation": {
+                "name": "Vertik\u00e1lna oscil\u00e1cia"
+            },
+            "wireless_charging": {
+                "name": "Bezdr\u00f4tov\u00e9 nab\u00edjanie"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probl\u00e9m",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "advertising_state_error": {
+            "message": "{address} neohlasuje stav"
+        },
+        "device_not_found_error": {
+            "message": "Nepodarilo sa n\u00e1js\u0165 Switchbot {sensor_type} s adresou {address}: {reason}"
+        },
+        "device_without_config_entry": {
+            "message": "ID zariadenia {device_id} nie je priraden\u00e9 k polo\u017eke konfigur\u00e1cie."
+        },
+        "not_keypad_vision_device": {
+            "message": "T\u00e1to slu\u017eba je podporovan\u00e1 len pre zariadenia SwitchBot Keypad Vision."
+        },
+        "operation_error": {
+            "message": "Pri vykon\u00e1van\u00ed akcie sa vyskytla chyba: {error}"
+        },
+        "set_fan_state_failed": {
+            "message": "Nepodarilo sa odosla\u0165 pr\u00edkaz ventil\u00e1toru."
+        },
+        "value_error": {
+            "message": "Inicializ\u00e1cia zariadenia Switchbot zlyhala z d\u00f4vodu nespr\u00e1vnych konfigura\u010dn\u00fdch parametrov: {error}"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "curtain_speed": "R\u00fdchlos\u0165 pohybu z\u00e1clony",
+                    "lock_force_nightlatch": "Vyn\u00fati\u0165 prev\u00e1dzkov\u00fd re\u017eim Nightlatch",
+                    "retry_count": "Po\u010det opakovan\u00ed"
+                },
+                "data_description": {
+                    "curtain_speed": "R\u00fdchlos\u0165 otv\u00e1rania a zatv\u00e1rania z\u00e1vesov (1-255, kde 1 je najpomal\u0161ia a 255 je najr\u00fdchlej\u0161ia)",
+                    "lock_force_nightlatch": "Vyn\u00faten\u00fd prev\u00e1dzkov\u00fd re\u017eim Nightlatch, aj ke\u010f Nightlatch nie je detekovan\u00fd",
+                    "retry_count": "Ko\u013ekokr\u00e1t zopakova\u0165 odoslanie pr\u00edkazov do zariaden\u00ed SwitchBot"
+                }
+            }
+        }
+    },
+    "services": {
+        "add_password": {
+            "description": "Pridajte heslo k svojmu kl\u00e1vesnicov\u00e9mu vizu\u00e1lnemu zariadeniu.",
+            "fields": {
+                "device_id": {
+                    "description": "ID zariadenia kl\u00e1vesnicov\u00e9ho videnia",
+                    "name": "ID zariadenia"
+                },
+                "password": {
+                    "description": "6 a\u017e 12-miestne heslo",
+                    "name": "Heslo"
+                }
+            },
+            "name": "Prida\u0165 heslo"
+        }
+    }
+}

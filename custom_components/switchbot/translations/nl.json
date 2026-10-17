@@ -1,0 +1,330 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Apparaat is al geconfigureerd",
+            "no_devices_found": "Geen apparaten gevonden op het netwerk",
+            "switchbot_unsupported_type": "Niet-ondersteund Switchbot-type.",
+            "unknown": "Onverwachte fout"
+        },
+        "error": {
+            "auth_failed": "Authenticatie mislukt: {error_detail}",
+            "unknown": "Onverwachte fout"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Wachtwoord",
+                    "username": "Gebruikersnaam"
+                },
+                "data_description": {
+                    "password": "Het wachtwoord van je SwitchBot account",
+                    "username": "De gebruikersnaam van je SwitchBot account"
+                }
+            },
+            "confirm": {
+                "description": "Wil je {name} instellen?"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "Wachtwoord",
+                    "username": "Gebruikersnaam"
+                },
+                "data_description": {
+                    "password": "Het wachtwoord van je SwitchBot account",
+                    "username": "De gebruikersnaam van je SwitchBot account"
+                },
+                "description": "Geef de gebruikersnaam en het wachtwoord van je SwitchBot app op. Deze gegevens worden niet opgeslagen en worden alleen gebruikt om de encryptiesleutels van je apparaten op te halen. Gebruikersnamen en wachtwoorden zijn hoofdlettergevoelig."
+            },
+            "encrypted_choose_method": {
+                "description": "Een versleuteld SwitchBot-apparaat kan op twee verschillende manieren worden ingesteld in Home Assistant.\n\nJe kunt de sleutel-id en encryptiesleutel zelf invoeren, of Home Assistant kan ze importeren vanuit je SwitchBot-account.",
+                "menu_options": {
+                    "encrypted_auth": "SwitchBot-account (aanbevolen)",
+                    "encrypted_key": "Encryptiesleutel handmatig invoeren"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "Encryptiesleutel",
+                    "key_id": "Sleutel-ID"
+                },
+                "data_description": {
+                    "encryption_key": "De encryptiesleutel voor het apparaat",
+                    "key_id": "De ID van de encryptiesleutel"
+                },
+                "description": "Voor het {name} -apparaat is een encryptiesleutel nodig. Meer informatie over hoe je deze kunt verkrijgen, vindt je in de documentatie."
+            },
+            "password": {
+                "data": {
+                    "password": "Wachtwoord"
+                },
+                "data_description": {
+                    "password": "Het wachtwoord dat nodig is voor toegang tot het Bot-apparaat"
+                },
+                "description": "Het {name} apparaat vereist een wachtwoord"
+            },
+            "select_device": {
+                "data": {
+                    "address": "MAC-adres"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Kalibratie"
+            },
+            "door_auto_lock_paused": {
+                "name": "Auto-lock gepauzeerd"
+            },
+            "door_timeout": {
+                "name": "Timeout"
+            },
+            "high_temperature": {
+                "name": "Hoge temperatuur"
+            },
+            "low_temperature": {
+                "name": "Lage temperatuur"
+            }
+        },
+        "button": {
+            "light_sensor": {
+                "name": "Lichtsensor"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "Handmatig",
+                            "off": "Uit",
+                            "schedule": "Schema"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            },
+            "roller_shade": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automatisch",
+                            "level_3": "Niveau 3"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Baby",
+                            "normal": "Normaal",
+                            "sleep": "Slapen"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Baby",
+                            "normal": "Normaal",
+                            "sleep": "Slapen"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Automatisch",
+                            "drying_filter": "Filter drogen",
+                            "high": "Hoog",
+                            "low": "Laag",
+                            "medium": "Gemiddeld",
+                            "quiet": "Rustig",
+                            "sleep": "Slaap",
+                            "target_humidity": "Doelluchtvochtigheid"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "Licht"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "autumn": "Herfst",
+                            "breathing": "Ademend",
+                            "cherry_blossom": "Kersenbloesem",
+                            "christmas": "Kerstmis",
+                            "colorful": "Kleurrijk",
+                            "cool": "Koel",
+                            "energy": "Energie",
+                            "fade": "Vervagen",
+                            "fireworks": "Vuurwerk",
+                            "flashing": "Knipperend",
+                            "flickering": "Flikkerend",
+                            "forest": "Bos",
+                            "halloween": "Halloween",
+                            "heartbeat": "Hartslag",
+                            "lightning": "Bliksem",
+                            "movie": "Film",
+                            "new_year": "Nieuwjaar",
+                            "rainbow": "Regenboog",
+                            "sleep": "Slaap",
+                            "sunrise": "Zonsopgang",
+                            "sunset": "Zonsondergang",
+                            "valentine_day": "Valentijnsdag"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "night_light": {
+                "state": {
+                    "off": "Uit"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "state": {
+                    "unhealthy": "Ongezond"
+                }
+            },
+            "battery_range": {
+                "state": {
+                    "high": "Hoog",
+                    "low": "Laag",
+                    "medium": "Gemiddeld"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Bluetooth-signaal"
+            },
+            "light_level": {
+                "name": "Lichtsterkte"
+            },
+            "water_level": {
+                "name": "Waterpeil",
+                "state": {
+                    "empty": "Leeg",
+                    "high": "Hoog",
+                    "low": "Laag",
+                    "medium": "Gemiddeld"
+                }
+            },
+            "wifi_signal": {
+                "name": "Wifi-signaal"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "true": "Trekken/intrekken"
+                        }
+                    }
+                }
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "retry_count": "Aantal herhalingen"
+                }
+            }
+        }
+    }
+}

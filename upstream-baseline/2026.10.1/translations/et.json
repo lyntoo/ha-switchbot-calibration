@@ -1,0 +1,507 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Seade on juba h\u00e4\u00e4lestatud",
+            "api_error": "Viga SwitchBot API-ga suhtlemisel: {error_detail}",
+            "no_devices_found": "Toetatud SwitchBot-seadmeid ei leitud levialas; Kui seade on levialas, veenduge, et skanneri aktiivne skaneerimine on lubatud, sest passiivse skaneerimisega ei saa SwitchBot-seadmeid avastada. Aktiivse skaneerimise saab keelata, kui seade on konfigureeritud. Kui vajate selgitust, kas seade on levialas, laadige alla Bluetooth-adapterit v\u00f5i -proksi pakkuva integratsiooni diagnostika ja kontrollige, kas SwitchBot-seadme MAC-aadress on olemas.",
+            "switchbot_unsupported_type": "Toetamata Switchboti t\u00fc\u00fcp.",
+            "unknown": "Ootamatu t\u00f5rge"
+        },
+        "error": {
+            "auth_failed": "Tuvastamine nurjus: {error_detail}",
+            "encryption_key_invalid": "V\u00f5tme ID v\u00f5i kr\u00fcptov\u00f5ti on sobimatu",
+            "unknown": "Ootamatu t\u00f5rge"
+        },
+        "flow_title": "{name} ({address})",
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "username": "Kasutajanimi"
+                },
+                "data_description": {
+                    "password": "SwitchBoti konto salas\u00f5na",
+                    "username": "SwitchBoti konto kasutajanimi"
+                },
+                "description": "Esita SwitchBoti rakenduse kasutajanimi ja salas\u00f5na. Neid andmeid ei salvestata ja neid kasutatakse ainult seadme mudeli teabe toomiseks automaatseks tuvastamiseks. Kasutajanimed ja salas\u00f5nad on t\u00f5stutundlikud."
+            },
+            "confirm": {
+                "description": "Kas seadistada {name} ?"
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "Salas\u00f5na",
+                    "username": "Kasutajanimi"
+                },
+                "data_description": {
+                    "password": "SwitchBoti konto salas\u00f5na",
+                    "username": "SwitchBoti konto kasutajanimi"
+                },
+                "description": "Esita SwitchBoti rakenduse kasutajanimi ja salas\u00f5na. Neid andmeid ei salvestata ja neid kasutatakse ainult seadme kr\u00fcpteerimisv\u00f5tme toomiseks. Kasutajanimed ja salas\u00f5nad on t\u00f5stutundlikud."
+            },
+            "encrypted_choose_method": {
+                "description": "Kr\u00fcpteeritud SwitchBoti seadet saab Home Assistantis seadistada kahel erineval viisil. \n \n Saad sisestada v\u00f5tme ID ja kr\u00fcpteerimisv\u00f5tme ise v\u00f5i Home Assistant saab need importida SwitchBoti kontolt.",
+                "menu_options": {
+                    "encrypted_auth": "SwitchBoti konto (soovitatav)",
+                    "encrypted_key": "Sisesta kr\u00fcptov\u00f5ti k\u00e4sitsi"
+                }
+            },
+            "encrypted_key": {
+                "data": {
+                    "encryption_key": "Kr\u00fcptimisv\u00f5ti",
+                    "key_id": "V\u00f5tme ID"
+                },
+                "data_description": {
+                    "encryption_key": "Seadme kr\u00fcpteerimisv\u00f5ti",
+                    "key_id": "Kr\u00fcpteerimisv\u00f5tme ID"
+                },
+                "description": "Seade {name} n\u00f5uab kr\u00fcptov\u00f5tit, \u00fcksikasjad selle hankimise kohta leiad dokumentatsioonist."
+            },
+            "password": {
+                "data": {
+                    "password": "Salas\u00f5na"
+                },
+                "data_description": {
+                    "password": "Boti seadmele juurdep\u00e4\u00e4suks vajalik salas\u00f5na"
+                },
+                "description": "Seade {name} n\u00f5uab salas\u00f5na"
+            },
+            "select_device": {
+                "data": {
+                    "address": "MAC-aadress"
+                },
+                "data_description": {
+                    "address": "SwitchBoti seadme Bluetoothi MAC-aadress"
+                }
+            },
+            "user": {
+                "description": "\u00dcks v\u00f5i mitu Bluetooth-adapterit kasutavad passiivset skannimist mis ei pruugi k\u00f5iki SwitchBoti seadmeid tuvastada. Kas soovid SwitchBoti kontole sisse logida, et seadme teavet alla laadida ja tuvastamist automatiseerida? Kui pole kindel, soovitame sisse logida.",
+                "menu_options": {
+                    "cloud_login": "Logi sisse SwitchBoti kontole",
+                    "select_device": "J\u00e4tka ilma sisselogimiseta"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Kalibreerimine"
+            },
+            "door_auto_lock_paused": {
+                "name": "Automaatne lukustus peatatud"
+            },
+            "door_timeout": {
+                "name": "Ajal\u00f5pp"
+            },
+            "door_unclosed_alarm": {
+                "name": "Sulgemata h\u00e4ire"
+            },
+            "door_unlocked_alarm": {
+                "name": "Lukustamata h\u00e4ire"
+            },
+            "duress_alarm": {
+                "name": "H\u00e4daolukorra h\u00e4ire"
+            },
+            "half_lock_calibration": {
+                "name": "Poolluku kalibreerimine"
+            },
+            "half_locked": {
+                "name": "Pooleldi lukustatud"
+            },
+            "high_temperature": {
+                "name": "K\u00f5rge temperatuur"
+            },
+            "lockout_alarm": {
+                "name": "Lukustumish\u00e4ire"
+            },
+            "low_temperature": {
+                "name": "Madal temperatuur"
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "Poollukk"
+            },
+            "light_sensor": {
+                "name": "Valgusandur"
+            },
+            "next_image": {
+                "name": "J\u00e4rgmine pilt"
+            },
+            "previous_image": {
+                "name": "Eelmine pilt"
+            },
+            "sync_datetime": {
+                "name": "Kuup\u00e4eva ja kellaaja s\u00fcnkroonimine"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "K\u00e4sitsi",
+                            "off": "V\u00e4ljas",
+                            "schedule": "Ajakava"
+                        }
+                    }
+                }
+            }
+        },
+        "cover": {
+            "cover": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "normal": "Tavaline",
+                            "silent": "Vaikne"
+                        }
+                    }
+                }
+            },
+            "roller_shade": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    },
+                    "speed": {
+                        "state": {
+                            "performance": "J\u00f5udlus",
+                            "quiet": "Vaikne"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automaatne",
+                            "level_1": "Tase 1",
+                            "level_2": "Tase 2",
+                            "level_3": "Tase 3",
+                            "pet": "Lemmikloomad",
+                            "sleep": "Unere\u017eiim"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    },
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Imiku re\u017eiim",
+                            "natural": "Looduslik",
+                            "normal": "Tavaline",
+                            "sleep": "Unere\u017eiim"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Imiku re\u017eiim",
+                            "custom_natural": "Kohandatud looduslik",
+                            "natural": "Looduslik",
+                            "normal": "Tavaline",
+                            "sleep": "Unere\u017eiim"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Automaatne",
+                            "drying_filter": "Filtri kuivatamine",
+                            "high": "K\u00f5rge",
+                            "low": "Madal",
+                            "medium": "Keskmine",
+                            "quiet": "Vaikne",
+                            "sleep": "Unere\u017eiim",
+                            "target_humidity": "Soovitud niiskusem\u00e4\u00e4r"
+                        }
+                    }
+                }
+            },
+            "humidifier": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "air_purifier_light": {
+                "name": "Valgus"
+            },
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "Alarm",
+                            "autumn": "S\u00fcgis",
+                            "breathing": "Hingamine",
+                            "cherry_blossom": "Cherry Blossom",
+                            "christmas": "J\u00f5ulud",
+                            "colorful": "V\u00e4rvikas",
+                            "cool": "Lahe",
+                            "dream": "Dream",
+                            "dynamic": "Dynamic",
+                            "energy": "Energy",
+                            "fade": "Hajutamine",
+                            "fireworks": "Fireworks",
+                            "flashing": "Vilkuv",
+                            "flickering": "Hubisev",
+                            "flow": "Voog",
+                            "forest": "Mets",
+                            "game": "Game",
+                            "halloween": "Halloween",
+                            "heartbeat": "Heartbeat",
+                            "lightning": "Lightning",
+                            "meditation": "Meditation",
+                            "modern": "Kaasaegne",
+                            "movie": "Movie",
+                            "mystery": "Mystery",
+                            "new_year": "New Year",
+                            "ocean": "Ookean",
+                            "party": "Party",
+                            "rainbow": "Rainbow",
+                            "relax": "L\u00f5\u00f5gastav",
+                            "rock": "Rock",
+                            "romance": "Romance",
+                            "rose": "Roos",
+                            "sleep": "Sleep",
+                            "smooth": "Sujuv",
+                            "starlight": "Starlight",
+                            "starlit_sky": "Starlit Sky",
+                            "strobe": "Stroboskoop",
+                            "sunrise": "Sunrise",
+                            "sunset": "P\u00e4ikeseloojang",
+                            "valentine_day": "Valentine's Day",
+                            "vitality": "Eluj\u00f5ud",
+                            "waves": "Waves"
+                        }
+                    }
+                }
+            }
+        },
+        "lock": {
+            "lock": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        },
+        "number": {
+            "display_time_offset": {
+                "name": "Kuva ajanihe"
+            },
+            "horizontal_oscillation_angle": {
+                "name": "Horisontaalne v\u00f5nkumisnurk"
+            },
+            "vertical_oscillation_angle": {
+                "name": "Vertikaalne v\u00f5nkumisnurk"
+            }
+        },
+        "select": {
+            "night_light": {
+                "name": "\u00d6\u00f6valgus",
+                "state": {
+                    "bright": "Hele",
+                    "off": "V\u00e4ljas",
+                    "soft": "Pehme"
+                }
+            },
+            "time_format": {
+                "name": "Ajavorming",
+                "state": {
+                    "12h": "12-tunnine (AM/PM)",
+                    "24h": "24-tunnine"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "\u00d5hukvaliteedi tase",
+                "state": {
+                    "excellent": "Suurep\u00e4rane",
+                    "good": "Hea",
+                    "moderate": "M\u00f5\u00f5dukas",
+                    "unhealthy": "Ebatervislik"
+                }
+            },
+            "battery_range": {
+                "name": "Aku s\u00f5iduulatus",
+                "state": {
+                    "critical": "Kriitiline",
+                    "high": "K\u00f5rge",
+                    "low": "Madal",
+                    "medium": "Keskmine"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Bluetoothi signaal"
+            },
+            "light_level": {
+                "name": "Valgustatus"
+            },
+            "pir_triggered_level": {
+                "name": "PIR-anduri k\u00e4ivitustase"
+            },
+            "radar_triggered_distance": {
+                "name": "Radariga m\u00f5\u00f5detud kaugus"
+            },
+            "radar_triggered_level": {
+                "name": "Radariga k\u00e4ivitatav tase"
+            },
+            "water_level": {
+                "name": "Veetase",
+                "state": {
+                    "empty": "T\u00fchi",
+                    "high": "K\u00f5rge",
+                    "low": "Madal",
+                    "medium": "Keskmine"
+                }
+            },
+            "wifi_signal": {
+                "name": "Wi-Fi signaal"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    },
+                    "switch_mode": {
+                        "state": {
+                            "false": "Hetkeline",
+                            "true": "V\u00e4lja/sisse"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "Lapselukk"
+            },
+            "horizontal_oscillation": {
+                "name": "Horisontaalne v\u00f5nkumine"
+            },
+            "vertical_oscillation": {
+                "name": "Vertikaalne v\u00f5nkumine"
+            },
+            "wireless_charging": {
+                "name": "Juhtmevaba laadimine"
+            }
+        },
+        "vacuum": {
+            "vacuum": {
+                "state_attributes": {
+                    "last_run_success": {
+                        "state": {
+                            "false": "Probleem",
+                            "true": "OK"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "exceptions": {
+        "advertising_state_error": {
+            "message": "{address} ei ole teavitusolek"
+        },
+        "device_not_found_error": {
+            "message": "Switchboti {sensor_type} aadressiga {address} ei leitud: {reason}"
+        },
+        "device_without_config_entry": {
+            "message": "Seadme ID {device_id} ei ole seotud konfiguratsioonikandega."
+        },
+        "not_keypad_vision_device": {
+            "message": "Seda teenust toetatakse ainult SwitchBot Keypad Vision seadmete puhul."
+        },
+        "operation_error": {
+            "message": "Toimingu tegemisel ilmnes t\u00f5rge: {error}"
+        },
+        "set_fan_state_failed": {
+            "message": "K\u00e4su ventilaatorile saatmine nurjus."
+        },
+        "value_error": {
+            "message": "Switchboti seadme l\u00e4htestamine nurjus valede konfiguratsiooniparameetrite t\u00f5ttu: {error}"
+        }
+    },
+    "options": {
+        "step": {
+            "init": {
+                "data": {
+                    "curtain_speed": "Kardina liikumise kiirus",
+                    "lock_force_nightlatch": "Force Nightlatch t\u00f6\u00f6re\u017eiim",
+                    "retry_count": "Korduskatsete arv"
+                },
+                "data_description": {
+                    "curtain_speed": "Kardina avamise ja sulgemise kiirus (1-255, kus 1 on k\u00f5ige aeglasem ja 255 k\u00f5ige kiirem)",
+                    "lock_force_nightlatch": "Sunni Nightlatchi t\u00f6\u00f6re\u017eiimi isegi siis, kui Nightlatchi ei tuvastata",
+                    "retry_count": "Mitu korda uuesti proovida k\u00e4skude saatmist SwitchBot seadmetele"
+                }
+            }
+        }
+    },
+    "services": {
+        "add_password": {
+            "description": "Lisa oma Keypad Vision'le salas\u00f5na.",
+            "fields": {
+                "device_id": {
+                    "description": "Keypad Vision seadme ID",
+                    "name": "Seadme ID"
+                },
+                "password": {
+                    "description": "6\u201312-kohaline salas\u00f5na",
+                    "name": "Salas\u00f5na"
+                }
+            },
+            "name": "Lisa salas\u00f5na"
+        }
+    }
+}

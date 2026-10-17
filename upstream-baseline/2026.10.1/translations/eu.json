@@ -1,0 +1,193 @@
+{
+    "config": {
+        "abort": {
+            "already_configured_device": "Gailua dagoeneko konfiguratuta dago",
+            "unknown": "Ustekabeko errorea"
+        },
+        "error": {
+            "unknown": "Ustekabeko errorea"
+        },
+        "step": {
+            "cloud_login": {
+                "data": {
+                    "password": "Pasahitza",
+                    "username": "Erabiltzaile-izena"
+                }
+            },
+            "encrypted_auth": {
+                "data": {
+                    "password": "Pasahitza",
+                    "username": "Erabiltzaile-izena"
+                }
+            },
+            "password": {
+                "data": {
+                    "password": "Pasahitza"
+                }
+            },
+            "select_device": {
+                "data": {
+                    "address": "MAC helbidea"
+                }
+            }
+        }
+    },
+    "entity": {
+        "binary_sensor": {
+            "calibration": {
+                "name": "Kalibrazioa"
+            },
+            "door_timeout": {
+                "name": "Denbora-muga"
+            },
+            "half_locked": {
+                "name": "Erdi-blokeatuta"
+            },
+            "high_temperature": {
+                "name": "Tenperatura altua"
+            },
+            "low_temperature": {
+                "name": "Tenperatura baxua"
+            }
+        },
+        "button": {
+            "half_lock": {
+                "name": "Erdi-blokeatuta"
+            }
+        },
+        "climate": {
+            "climate": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "manual": "Eskuzkoa",
+                            "schedule": "Ordutegia"
+                        }
+                    }
+                }
+            }
+        },
+        "fan": {
+            "air_purifier": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "auto": "Automatikoa",
+                            "level_1": "1. maila",
+                            "level_2": "2. maila",
+                            "level_3": "3. maila"
+                        }
+                    }
+                }
+            },
+            "fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Haurra",
+                            "normal": "Normala"
+                        }
+                    }
+                }
+            },
+            "standing_fan": {
+                "state_attributes": {
+                    "preset_mode": {
+                        "state": {
+                            "baby": "Haurra",
+                            "normal": "Normala"
+                        }
+                    }
+                }
+            }
+        },
+        "humidifier": {
+            "evaporative_humidifier": {
+                "state_attributes": {
+                    "mode": {
+                        "state": {
+                            "auto": "Automatikoa",
+                            "high": "Altua",
+                            "low": "Baxua",
+                            "medium": "Ertaina"
+                        }
+                    }
+                }
+            }
+        },
+        "light": {
+            "light": {
+                "state_attributes": {
+                    "effect": {
+                        "state": {
+                            "alarm": "Alarma",
+                            "christmas": "Gabonak",
+                            "energy": "Energia",
+                            "modern": "Modernoa",
+                            "movie": "Filma",
+                            "sunrise": "Egunsentia",
+                            "sunset": "Ilunabarra"
+                        }
+                    }
+                }
+            }
+        },
+        "select": {
+            "night_light": {
+                "state": {
+                    "bright": "Distiratsu"
+                }
+            }
+        },
+        "sensor": {
+            "aqi_quality_level": {
+                "name": "Aire-kalitatearen maila"
+            },
+            "battery_range": {
+                "state": {
+                    "high": "Altua",
+                    "low": "Baxua",
+                    "medium": "Ertaina"
+                }
+            },
+            "bluetooth_signal": {
+                "name": "Bluetooth-seinalea"
+            },
+            "water_level": {
+                "state": {
+                    "empty": "Hutsik",
+                    "high": "Altua",
+                    "low": "Baxua",
+                    "medium": "Ertaina"
+                }
+            },
+            "wifi_signal": {
+                "name": "Wi-Fiaren seinalea"
+            }
+        },
+        "switch": {
+            "bot": {
+                "state_attributes": {
+                    "switch_mode": {
+                        "state": {
+                            "false": "Unekoa"
+                        }
+                    }
+                }
+            },
+            "child_lock": {
+                "name": "Haur-blokeoa"
+            }
+        }
+    },
+    "services": {
+        "add_password": {
+            "fields": {
+                "device_id": {
+                    "name": "Gailuaren IDa"
+                }
+            },
+            "name": "Pasahitza gehitu"
+        }
+    }
+}

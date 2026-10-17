@@ -1,0 +1,46 @@
+# Modified from Home Assistant Core (Apache-2.0): adds the Blind Tilt calibration services (at the end of the file).
+add_password:
+  fields:
+    device_id:
+      required: true
+      example: "c2d01328efd261f586e56d914e3af07e"
+      selector:
+        device:
+          integration: switchbot
+    password:
+      required: true
+      example: "123456"
+      selector:
+        text:
+          type: password
+
+# --- SwitchBot Blind Tilt calibration services (cover entities) ---
+calibration_start:
+  target:
+    entity:
+      integration: switchbot
+      domain: cover
+
+calibration_save:
+  target:
+    entity:
+      integration: switchbot
+      domain: cover
+
+calibration_finish:
+  target:
+    entity:
+      integration: switchbot
+      domain: cover
+
+calibration_abort:
+  target:
+    entity:
+      integration: switchbot
+      domain: cover
+
+calibration_status:
+  target:
+    entity:
+      integration: switchbot
+      domain: cover
