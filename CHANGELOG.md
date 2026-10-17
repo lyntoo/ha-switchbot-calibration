@@ -1,5 +1,8 @@
 # Changelog
 
+## 1.0.1
+- Add the integration's own icon and logo (`custom_components/switchbot/brand/`, light and dark variants).
+
 ## 1.0.0
 - First public release, based on Home Assistant Core 2026.10.1 (PySwitchbot 2.9.0).
 - SwitchBot Blind Tilt: guided calibration wizard (Settings > Devices & services > SwitchBot > the blind > Configure > Calibrate the blind), English and French.

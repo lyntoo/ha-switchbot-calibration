@@ -13,8 +13,6 @@ jobs:
         uses: hacs/action@main
         with:
           category: integration
-          # Custom repository: not submitted to the HACS default store, so the brand-assets check does not apply.
-          ignore: brands
   tests:
     runs-on: ubuntu-latest
     steps:
